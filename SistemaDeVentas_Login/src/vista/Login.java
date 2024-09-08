@@ -115,7 +115,7 @@ public class Login extends javax.swing.JFrame {
         jButton_IniciarSesion.setBackground(new java.awt.Color(51, 153, 255));
         jButton_IniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton_IniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_IniciarSesion.setText("Iniciar Sesion 1");
+        jButton_IniciarSesion.setText("Iniciar Sesion 2");
         jButton_IniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_IniciarSesionActionPerformed(evt);
