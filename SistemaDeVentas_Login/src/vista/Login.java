@@ -115,7 +115,7 @@ public class Login extends javax.swing.JFrame {
         jButton_IniciarSesion.setBackground(new java.awt.Color(51, 153, 255));
         jButton_IniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton_IniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_IniciarSesion.setText("Iniciar Sesion");
+        jButton_IniciarSesion.setText("Iniciar Sesion 2");
         jButton_IniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_IniciarSesionActionPerformed(evt);
@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(108, 108, 108))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton_IniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_IniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(99, 99, 99))))
         );
         jPanel2Layout.setVerticalGroup(
