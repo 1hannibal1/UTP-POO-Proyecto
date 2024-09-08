@@ -1,3 +1,5 @@
-/SistemaDeVentas_Login/nbproject/*
-
-/SistemaDeVentas_Login/build/*
+nbproject/private/
+nbproject/nbproject.xml
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/project.properties
