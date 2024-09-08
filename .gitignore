@@ -4,6 +4,7 @@
 
 # Ignorar configuraciones privadas de NetBeans
 /nbproject/private/
+nbproject/private/
 /SistemaDeVentas_Login/nbproject/private/
 
 # Ignorar la carpeta de distribución (si existe)
