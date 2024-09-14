@@ -27,44 +27,90 @@ public class Reportes extends javax.swing.JFrame {
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1_imagen = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1_regresarProductos = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla_Ventas = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txt_codigoVenta = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txt_FechaVenta = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txt_direccionBoleta = new javax.swing.JTextField();
-        txt_TelefonoVenta = new javax.swing.JTextField();
-        txt_nombreVenta = new javax.swing.JTextField();
-        txt_rucVenta = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txt_pagoVenta = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jButton1_regresarVenta = new javax.swing.JButton();
-        jButton1_buscarVenta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(51, 140, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1_imagen.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel1_imagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Reporte de Venta");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 240, 40));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tabla_Ventas.setModel(new javax.swing.table.DefaultTableModel(
+        jButton1_regresarProductos.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1_regresarProductos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1_regresarProductos.setText("Regresar");
+        jPanel1.add(jButton1_regresarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 140, 40));
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 0));
+        jButton1.setText("MESA 10");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 110, 60));
+
+        jButton2.setBackground(new java.awt.Color(255, 204, 0));
+        jButton2.setText("MESA 01");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 60));
+
+        jButton3.setBackground(new java.awt.Color(255, 204, 0));
+        jButton3.setText("MESA 02");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 110, 60));
+
+        jButton4.setBackground(new java.awt.Color(255, 204, 0));
+        jButton4.setText("MESA 03");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 60));
+
+        jButton5.setBackground(new java.awt.Color(255, 204, 0));
+        jButton5.setText("MESA 04");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 110, 60));
+
+        jButton6.setBackground(new java.awt.Color(255, 204, 0));
+        jButton6.setText("MESA 05");
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 110, 60));
+
+        jButton7.setBackground(new java.awt.Color(255, 204, 0));
+        jButton7.setText("MESA 06");
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 110, 60));
+
+        jButton8.setBackground(new java.awt.Color(255, 204, 0));
+        jButton8.setText("MESA 07");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 110, 60));
+
+        jButton9.setBackground(new java.awt.Color(255, 204, 0));
+        jButton9.setText("MESA 08");
+        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, 60));
+
+        jButton10.setBackground(new java.awt.Color(255, 204, 0));
+        jButton10.setText("MESA 09");
+        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 60));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -75,142 +121,33 @@ public class Reportes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabla_Ventas.setEnabled(false);
-        jScrollPane1.setViewportView(tabla_Ventas);
+        jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 880, 420));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, 370));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Fecha:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 80, -1));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField1.setText("Total:");
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, 110, -1));
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ventas.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, 110, 80));
+        jLabel2.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Reporte de Venta");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 180, 30));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("N° :");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, 30, -1));
-        jPanel2.add(txt_codigoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 25, 90, -1));
+        jPanel1_imagen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 860, 600));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Datos del Cliente:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 110, -1));
-
-        txt_FechaVenta.setEnabled(false);
-        jPanel2.add(txt_FechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 65, 130, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("RUC:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nombre:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Telefono:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Documento:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, -1, -1));
-
-        txt_direccionBoleta.setEnabled(false);
-        txt_direccionBoleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_direccionBoletaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txt_direccionBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 140, -1));
-
-        txt_TelefonoVenta.setEnabled(false);
-        txt_TelefonoVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_TelefonoVentaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txt_TelefonoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 140, -1));
-
-        txt_nombreVenta.setEnabled(false);
-        txt_nombreVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombreVentaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txt_nombreVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 160, -1));
-
-        txt_rucVenta.setEnabled(false);
-        txt_rucVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_rucVentaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txt_rucVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 160, -1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Total a Pagar:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 630, 90, -1));
-
-        txt_pagoVenta.setEnabled(false);
-        jPanel2.add(txt_pagoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 620, 130, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("¡Gracias por su compra!");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 660, 250, 30));
-
-        jButton1_regresarVenta.setBackground(new java.awt.Color(51, 140, 255));
-        jButton1_regresarVenta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1_regresarVenta.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1_regresarVenta.setText("Regresar");
-        jButton1_regresarVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_regresarVentaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1_regresarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 660, 120, 30));
-
-        jButton1_buscarVenta.setBackground(new java.awt.Color(51, 140, 255));
-        jButton1_buscarVenta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1_buscarVenta.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1_buscarVenta.setText("Buscar");
-        jPanel2.add(jButton1_buscarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 90, 30));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 700));
+        getContentPane().add(jPanel1_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_rucVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rucVentaActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_rucVentaActionPerformed
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void txt_TelefonoVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TelefonoVentaActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_TelefonoVentaActionPerformed
-
-    private void txt_nombreVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreVentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_nombreVentaActionPerformed
-
-    private void txt_direccionBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_direccionBoletaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_direccionBoletaActionPerformed
-
-    private void jButton1_regresarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarVentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1_regresarVentaActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,29 +185,23 @@ public class Reportes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1_buscarVenta;
-    private javax.swing.JButton jButton1_regresarVenta;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton1_regresarProductos;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel1_imagen;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabla_Ventas;
-    private javax.swing.JTextField txt_FechaVenta;
-    private javax.swing.JTextField txt_TelefonoVenta;
-    private javax.swing.JTextField txt_codigoVenta;
-    private javax.swing.JTextField txt_direccionBoleta;
-    private javax.swing.JTextField txt_nombreVenta;
-    private javax.swing.JTextField txt_pagoVenta;
-    private javax.swing.JTextField txt_rucVenta;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -88,17 +88,14 @@ public class Producto extends javax.swing.JFrame {
         jPanel1.add(jButton1_actualizarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 80, 140, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Codigo:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Precio:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
@@ -114,7 +111,7 @@ public class Producto extends javax.swing.JFrame {
                 txt_nombreProductoActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_nombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 220, 30));
+        jPanel1.add(txt_nombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 220, 30));
         jPanel1.add(txt_precioProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 210, 30));
 
         jButton2_agregarProducto.setBackground(new java.awt.Color(51, 140, 255));
