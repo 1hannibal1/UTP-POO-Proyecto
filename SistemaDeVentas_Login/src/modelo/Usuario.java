@@ -14,6 +14,10 @@ import java.util.Scanner;
         this.password = password;
     }
 
+    Usuario() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     // Getters y Setters
     public String getNombre() {
         return nombre;
