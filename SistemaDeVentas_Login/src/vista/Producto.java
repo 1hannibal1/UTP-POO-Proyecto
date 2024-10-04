@@ -127,7 +127,7 @@ public class Producto extends javax.swing.JFrame {
                 jButton2_agregarProductoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2_agregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 140, -1));
+        jPanel1.add(jButton2_agregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 140, -1));
 
         jButton1_regresarProductos.setBackground(new java.awt.Color(51, 140, 255));
         jButton1_regresarProductos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

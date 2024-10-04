@@ -1,5 +1,6 @@
 package vista;
 
+import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
 import modelo.ProductoManager;
 import modelo.Productos;
@@ -9,7 +10,9 @@ public class Venta extends javax.swing.JFrame {
     public Venta() {
         initComponents();
 
-
+        ButtonGroup group = new ButtonGroup();
+        group.add(rdButtonBoleta);
+        group.add(rdButtonFactura);
     }
 
     Venta(String string, String producto_1, double d) {
@@ -26,6 +29,10 @@ public class Venta extends javax.swing.JFrame {
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
         buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
+        buttonGroup8 = new javax.swing.ButtonGroup();
+        buttonGroup9 = new javax.swing.ButtonGroup();
         jPanel1_imagen = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -231,6 +238,10 @@ public class Venta extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
