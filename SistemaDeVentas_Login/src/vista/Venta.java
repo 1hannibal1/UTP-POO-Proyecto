@@ -6,19 +6,10 @@ import modelo.Productos;
 
 public class Venta extends javax.swing.JFrame {
 
-    private final DefaultTableModel tableModel;
-
     public Venta() {
         initComponents();
 
-        tableModel = new DefaultTableModel(new String[]{"Código", "Nombre", "Precio Unitario"}, 0);
-        tabla_productos.setModel(tableModel);
 
-        for (Productos producto : ProductoManager.getProductos()) {
-            tableModel.addRow(new Object[]{
-                producto.getCodigo(), producto.getNombre(), producto.getPrecio()
-            });
-        }
     }
 
     Venta(String string, String producto_1, double d) {
@@ -114,7 +105,9 @@ public class Venta extends javax.swing.JFrame {
         });
         jPanel1.add(btnModificarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 220, 50));
 
+        rdButtonBoleta.setBackground(new java.awt.Color(255, 255, 255));
         rdButtonBoleta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rdButtonBoleta.setForeground(new java.awt.Color(0, 0, 0));
         rdButtonBoleta.setText("BOLETA");
         rdButtonBoleta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +116,9 @@ public class Venta extends javax.swing.JFrame {
         });
         jPanel1.add(rdButtonBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 140, -1));
 
+        rdButtonFactura.setBackground(new java.awt.Color(255, 255, 255));
         rdButtonFactura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rdButtonFactura.setForeground(new java.awt.Color(0, 0, 0));
         rdButtonFactura.setText("FACTURA");
         jPanel1.add(rdButtonFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
@@ -195,21 +190,11 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteActionPerformed
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
-        Menu menu = new Menu();
-        menu.setVisible(true);
-        dispose();
+
     }//GEN-LAST:event_btnModificarPActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String codigoB = txtCliente.getText();
 
-        for (Productos producto : ProductoManager.getProductos()) {
-            if (producto.getCodigo().equals(codigoB)) {
-                txtTotal.setText(producto.getNombre());
-                txt_precioProducto.setText(producto.getPrecio() + "");
-                break;
-            }
-        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentoActionPerformed
@@ -236,22 +221,7 @@ public class Venta extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void limpiar(){
-        txtTotal.setText("");
-        txt_precioProducto.setText("");
-        txtCliente.setText("");
-    }
-    
-    public void actualizarTabla(){
-        this.limpiar();
-        tableModel.setRowCount(0);
-        for (Productos producto : ProductoManager.getProductos()) {
-            tableModel.addRow(new Object[]{
-                producto.getCodigo(), producto.getNombre(), producto.getPrecio()
-            });
-        }
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
