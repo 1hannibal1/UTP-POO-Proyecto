@@ -6,7 +6,6 @@ public class Reportes extends javax.swing.JFrame {
     public Reportes() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,22 +48,47 @@ public class Reportes extends javax.swing.JFrame {
         jButton1_regresarProductos.setBackground(new java.awt.Color(204, 204, 204));
         jButton1_regresarProductos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1_regresarProductos.setText("Regresar");
+        jButton1_regresarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_regresarProductosActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1_regresarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 140, 40));
 
         BtnMesa10.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa10.setText("MESA 10");
+        BtnMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 110, 60));
 
         BtnMesa01.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa01.setText("MESA 01");
+        BtnMesa01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa01ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa01, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 60));
 
         BtnMesa02.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa02.setText("MESA 02");
+        BtnMesa02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa02ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa02, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 110, 60));
 
         BtnMesa03.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa03.setText("MESA 03");
+        BtnMesa03.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa03ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa03, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 60));
 
         BtnMesa04.setBackground(new java.awt.Color(255, 204, 0));
@@ -78,10 +102,20 @@ public class Reportes extends javax.swing.JFrame {
 
         BtnMesa05.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa05.setText("MESA 05");
+        BtnMesa05.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa05ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa05, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 110, 60));
 
         BtnMesa06.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa06.setText("MESA 06");
+        BtnMesa06.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa06ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa06, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 110, 60));
 
         BtnMesa07.setBackground(new java.awt.Color(255, 204, 0));
@@ -95,10 +129,20 @@ public class Reportes extends javax.swing.JFrame {
 
         BtnMesa08.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa08.setText("MESA 08");
+        BtnMesa08.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa08ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa08, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, 60));
 
         BtnMesa09.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa09.setText("MESA 09");
+        BtnMesa09.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMesa09ActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMesa09, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 60));
 
         TableReporte.setModel(new javax.swing.table.DefaultTableModel(
@@ -131,31 +175,58 @@ public class Reportes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-       private void BtnMesa01ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        System.out.println("vista.Reportes.BtnMesa01ActionPerformed()");
-    } 
-    private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        System.out.println("vista.Reportes.BtnMesa02ActionPerformed()");
-    } 
-    private void BtnMesa03ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        System.out.println("vista.Reportes.BtnMesa03ActionPerformed()");
-    } 
+
     private void BtnMesa04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa04ActionPerformed
         System.out.println("vista.Reportes.BtnMesa04ActionPerformed()");
     }//GEN-LAST:event_BtnMesa04ActionPerformed
-    private void BtnMesa05ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        System.out.println("vista.Reportes.BtnMesa05ActionPerformed()");
-    }     
-    private void BtnMesa06ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        System.out.println("vista.Reportes.BtnMesa06ActionPerformed()");
-    } 
+    
+
     private void BtnMesa07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa07ActionPerformed
         System.out.println("vista.Reportes.BtnMesa07ActionPerformed()");
     }//GEN-LAST:event_BtnMesa07ActionPerformed
-     private void BtnMesa08ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-         System.out.println("vista.Reportes.BtnMesa08ActionPerformed()");
-    }     
-   
+
+    private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa02ActionPerformed
+        System.out.println("vista.Reportes.Btn02ActionPerformed()");
+    }//GEN-LAST:event_BtnMesa02ActionPerformed
+
+    private void BtnMesa01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa01ActionPerformed
+        System.out.println("vista.Reportes.Btn01ActionPerformed()");
+    }//GEN-LAST:event_BtnMesa01ActionPerformed
+
+    private void jButton1_regresarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarProductosActionPerformed
+        Menu menu = new Menu();
+        menu.setVisible(true); 
+        dispose();
+    }//GEN-LAST:event_jButton1_regresarProductosActionPerformed
+
+    private void BtnMesa03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa03ActionPerformed
+        System.out.println("vista.Reportes.Btn03ActionPerformed()");// TODO add your handling code here:
+    }//GEN-LAST:event_BtnMesa03ActionPerformed
+
+    private void BtnMesa05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa05ActionPerformed
+        System.out.println("vista.Reportes.Btn05ActionPerformed()");// TODO add your handling code here:
+    }//GEN-LAST:event_BtnMesa05ActionPerformed
+
+    private void BtnMesa06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa06ActionPerformed
+        System.out.println("vista.Reportes.Btn06ActionPerformed()");// TODO add your handling code here:
+    }//GEN-LAST:event_BtnMesa06ActionPerformed
+
+    private void BtnMesa08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa08ActionPerformed
+        System.out.println("vista.Reportes.BtnMesa08ActionPerformed()");// TODO add your handling code here:
+    }//GEN-LAST:event_BtnMesa08ActionPerformed
+
+    private void BtnMesa09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa09ActionPerformed
+        System.out.println("vista.Reportes.BtnMesa09ActionPerformed()");// TODO add your handling code here:
+    }//GEN-LAST:event_BtnMesa09ActionPerformed
+
+    private void BtnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa10ActionPerformed
+        System.out.println("vista.Reportes.BtnMesa10ActionPerformed()");// TODO add your handling code here:
+    }//GEN-LAST:event_BtnMesa10ActionPerformed
+ 
+     
+ 
+      
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
