@@ -62,7 +62,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa10ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 110, 60));
+        jPanel1.add(BtnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 150, 70));
 
         BtnMesa01.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa01.setText("MESA 01");
@@ -71,7 +71,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa01ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa01, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 60));
+        jPanel1.add(BtnMesa01, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 150, 70));
 
         BtnMesa02.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa02.setText("MESA 02");
@@ -80,7 +80,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa02ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa02, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 110, 60));
+        jPanel1.add(BtnMesa02, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 150, 70));
 
         BtnMesa03.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa03.setText("MESA 03");
@@ -89,7 +89,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa03ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa03, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 60));
+        jPanel1.add(BtnMesa03, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 150, 70));
 
         BtnMesa04.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa04.setText("MESA 04");
@@ -98,7 +98,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa04ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa04, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 110, 60));
+        jPanel1.add(BtnMesa04, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 150, 70));
 
         BtnMesa05.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa05.setText("MESA 05");
@@ -107,7 +107,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa05ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa05, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 110, 60));
+        jPanel1.add(BtnMesa05, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 150, 70));
 
         BtnMesa06.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa06.setText("MESA 06");
@@ -116,7 +116,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa06ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa06, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 110, 60));
+        jPanel1.add(BtnMesa06, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 150, 70));
 
         BtnMesa07.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa07.setText("MESA 07");
@@ -125,7 +125,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa07ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa07, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 110, 60));
+        jPanel1.add(BtnMesa07, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 150, 70));
 
         BtnMesa08.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa08.setText("MESA 08");
@@ -134,7 +134,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa08ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa08, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, 60));
+        jPanel1.add(BtnMesa08, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 150, 70));
 
         BtnMesa09.setBackground(new java.awt.Color(255, 204, 0));
         BtnMesa09.setText("MESA 09");
@@ -143,7 +143,7 @@ public class Reportes extends javax.swing.JFrame {
                 BtnMesa09ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMesa09, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 60));
+        jPanel1.add(BtnMesa09, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 150, 70));
 
         TableReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
