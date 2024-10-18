@@ -1,6 +1,9 @@
 
 package vista;
 
+import java.util.ArrayList;
+import modelo.Pedido;
+
 public class Reportes extends javax.swing.JFrame {
 
     public Reportes() {

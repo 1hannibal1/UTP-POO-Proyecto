@@ -1,34 +1,36 @@
 package modelo;
 
 public class Pedido {
-    private String producto;
+    private String nombreCliente;
+    private String nombreProducto;
     private int cantidad;
-    private double precioUnitario;
+    private int numeroMesa;
 
-    public Pedido(String producto, int cantidad, double precioUnitario) {
-        this.producto = producto;
+// constructor 
+    public Pedido(String nombreCliente, String nombreProducto, int cantidad, int numeroMesa) {
+        this.nombreCliente = nombreCliente;
+        this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
+        this.numeroMesa = numeroMesa;
     }
 
-    public String getProducto() {
-        return producto;
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
     public int getCantidad() {
         return cantidad;
     }
 
-    public double getPrecioUnitario() {
-        return precioUnitario;
-    }
-
-    public double calcularTotal() {
-        return cantidad * precioUnitario;
+    public int getNumeroMesa() {
+        return numeroMesa;
     }
 
     @Override
     public String toString() {
-        return cantidad + " x " + producto + " @ $" + precioUnitario + " = $" + calcularTotal();
+        return "Mesa: " + numeroMesa + ", Cliente: " + nombreCliente + ", Producto: " + nombreProducto + ", Cantidad: " + cantidad;
     }
 }
