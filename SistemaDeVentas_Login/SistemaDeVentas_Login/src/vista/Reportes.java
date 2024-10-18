@@ -32,7 +32,7 @@ public class Reportes extends javax.swing.JFrame {
         BtnMesa09 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableReporte = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -147,22 +147,27 @@ public class Reportes extends javax.swing.JFrame {
 
         TableReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Unidades", "Pedido", "Precio"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TableReporte);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, 370));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.setText("Total:");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, 110, -1));
+        txtTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtTotal.setText("Total:");
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, 110, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -178,6 +183,11 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa04ActionPerformed
         System.out.println("vista.Reportes.BtnMesa04ActionPerformed()");
+        ArrayList<Pedido> pedidos1 = 
+                new Pedido('anto','parrilla',2,4);
+                new Pedido('alex','caldo de gallina',1,4);
+
+
     }//GEN-LAST:event_BtnMesa04ActionPerformed
     
 
@@ -187,10 +197,19 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa02ActionPerformed
         System.out.println("vista.Reportes.Btn02ActionPerformed()");
+        ArrayList<Pedido> pedidos1 = 
+                new Pedido('jose','pollo ala brasa',3,2);
+                new Pedido('miguel','aeropuerto',1,2);
+
     }//GEN-LAST:event_BtnMesa02ActionPerformed
 
     private void BtnMesa01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa01ActionPerformed
         System.out.println("vista.Reportes.Btn01ActionPerformed()");
+        ArrayList<Pedido> pedidos1 = 
+                new Pedido('vanesa','pollo ala brasa',3,1);
+                new Pedido('denil','chaufa',2,1);
+
+    
     }//GEN-LAST:event_BtnMesa01ActionPerformed
 
     private void jButton1_regresarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarProductosActionPerformed
@@ -201,10 +220,20 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa03ActionPerformed
         System.out.println("vista.Reportes.Btn03ActionPerformed()");// TODO add your handling code here:
+        ArrayList<Pedido> pedidos1 = 
+                new Pedido('kim','pollo a la plancha',3,3);
+                new Pedido('luis','aeropuerto',1,3);
+
+
     }//GEN-LAST:event_BtnMesa03ActionPerformed
 
     private void BtnMesa05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa05ActionPerformed
         System.out.println("vista.Reportes.Btn05ActionPerformed()");// TODO add your handling code here:
+        ArrayList<Pedido> pedidos1 = 
+                new Pedido('vere','parrila',2,5);
+                new Pedido('carlos','chaufa',3,5);
+
+
     }//GEN-LAST:event_BtnMesa05ActionPerformed
 
     private void BtnMesa06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa06ActionPerformed
@@ -223,7 +252,7 @@ public class Reportes extends javax.swing.JFrame {
         System.out.println("vista.Reportes.BtnMesa10ActionPerformed()");// TODO add your handling code here:
     }//GEN-LAST:event_BtnMesa10ActionPerformed
  
-     
+   
  
       
     
@@ -277,6 +306,6 @@ public class Reportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel1_imagen;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
