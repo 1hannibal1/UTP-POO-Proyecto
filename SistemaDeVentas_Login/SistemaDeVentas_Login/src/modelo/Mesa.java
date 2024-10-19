@@ -26,9 +26,9 @@ public class Mesa {
 
     public double calcularTotal() {
         double total = 0;
-        for (Pedido pedido : pedidos) {
-            total += pedido.calcularTotal();
-        }
+        //for (Pedido pedido : pedidos) {
+            //total += pedido.calcularTotal();
+        //}
         return total;
     }
 
