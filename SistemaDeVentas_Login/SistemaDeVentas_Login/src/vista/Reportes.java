@@ -186,11 +186,15 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa04ActionPerformed
         System.out.println("vista.Reportes.BtnMesa04ActionPerformed()");
-        ArrayList<Pedido> pedidos1 = 
-                new Pedido('anto','parrilla',2,4);
-                new Pedido('alex','caldo de gallina',1,4);
+        ArrayList<Pedido> pedidos4 = new ArrayList<>();
+                pedidos4.add(new Pedido("anto","parrilla",2,4));
+                pedidos4.add(new Pedido("alex","caldo de gallina",1,4));
 
+                for (Pedido pedido : pedidos4) {
+                 System.out.println(pedido);
+                 }
 
+                System.out.println(pedidos4);
     }//GEN-LAST:event_BtnMesa04ActionPerformed
     
 
@@ -200,18 +204,31 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa02ActionPerformed
         System.out.println("vista.Reportes.Btn02ActionPerformed()");
-        ArrayList<Pedido> pedidos1 = 
-                new Pedido('jose','pollo ala brasa',3,2);
-                new Pedido('miguel','aeropuerto',1,2);
+        ArrayList<Pedido> pedidos2 =  new ArrayList<>();
+                pedidos2.add(new Pedido("jose","pollo ala brasa",3,2));
+                pedidos2.add(new Pedido("miguel","aeropuerto",1,2));
+                
+                 for (Pedido pedido : pedidos2) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos2);
 
     }//GEN-LAST:event_BtnMesa02ActionPerformed
 
     private void BtnMesa01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa01ActionPerformed
         System.out.println("vista.Reportes.Btn01ActionPerformed()");
-        ArrayList<Pedido> pedidos1 = 
-                new Pedido('vanesa','pollo ala brasa',3,1);
-                new Pedido('denil','chaufa',2,1);
+        ArrayList<Pedido> pedidos1 = new ArrayList<>();
+                pedidos1.add(new Pedido("vanesa","pollo ala brasa",3,1));
+                pedidos1.add(new Pedido("denil","chaufa",2,1));
 
+                for (Pedido pedido : pedidos1) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos1);
+
+              
     
     }//GEN-LAST:event_BtnMesa01ActionPerformed
 
@@ -223,19 +240,29 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa03ActionPerformed
         System.out.println("vista.Reportes.Btn03ActionPerformed()");// TODO add your handling code here:
-        ArrayList<Pedido> pedidos1 = 
-                new Pedido('kim','pollo a la plancha',3,3);
-                new Pedido('luis','aeropuerto',1,3);
+        ArrayList<Pedido> pedidos3 = new ArrayList<>();
+                pedidos3.add(new Pedido("kim","pollo a la plancha",3,3));
+                pedidos3.add(new Pedido("luis","aeropuerto",1,3));
 
 
+                for (Pedido pedido : pedidos3) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos3);
     }//GEN-LAST:event_BtnMesa03ActionPerformed
 
     private void BtnMesa05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa05ActionPerformed
         System.out.println("vista.Reportes.Btn05ActionPerformed()");// TODO add your handling code here:
-        ArrayList<Pedido> pedidos1 = 
-                new Pedido('vere','parrila',2,5);
-                new Pedido('carlos','chaufa',3,5);
+        ArrayList<Pedido> pedidos5 = new ArrayList<>();
+                pedidos5.add(new Pedido("vere","parrila",2,5));
+                pedidos5.add(new Pedido("carlos","chaufa",3,5));
 
+                for (Pedido pedido : pedidos5) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos5);
 
     }//GEN-LAST:event_BtnMesa05ActionPerformed
 
