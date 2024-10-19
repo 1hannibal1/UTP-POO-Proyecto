@@ -120,8 +120,8 @@ public class Usuarios extends javax.swing.JFrame {
     private void jButton1_agregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_agregarUsuarioActionPerformed
         String nombreU = txt_nombreUsuario1.getText();
         String claveU = txt_claveUsuario.getText();
-        Usuario usuario = new Usuario((UsuarioManager.getUsuario().size() + 1) + "", nombreU, claveU);
-        UsuarioManager.getUsuario().add(usuario);
+     //   Usuario usuario = new Usuario((UsuarioManager.getUsuario().size() + 1) + "", nombreU, claveU);
+       // UsuarioManager.getUsuario().add(usuario);
         
         this.limpiar();
     }//GEN-LAST:event_jButton1_agregarUsuarioActionPerformed
