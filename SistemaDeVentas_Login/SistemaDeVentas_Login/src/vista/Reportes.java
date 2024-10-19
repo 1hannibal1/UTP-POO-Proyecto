@@ -3,6 +3,7 @@ package vista;
 
 import java.util.ArrayList;
 import modelo.Pedido;
+import modelo.Reporte;
 
 public class Reportes extends javax.swing.JFrame {
 
@@ -318,7 +319,7 @@ public class Reportes extends javax.swing.JFrame {
         System.out.println("vista.Reportes.BtnMesa10ActionPerformed()");
         ArrayList<Pedido> pedidos10 =  new ArrayList<>();
                 pedidos10.add(new Pedido("jose","pollo ala brasa",3,10));
-                pedidos10.add(new Pedido("miguel","aeropuerto",1,10));
+                pedidos10.add(new Pedido("enrrique","aeropuerto",1,10));
                 
                  for (Pedido pedido : pedidos10) {
                  System.out.println(pedido);
