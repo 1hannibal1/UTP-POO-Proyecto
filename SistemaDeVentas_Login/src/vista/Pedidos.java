@@ -8,7 +8,7 @@ public class Pedidos extends javax.swing.JFrame {
 
     public Pedidos() {
         initComponents();
-
+        SeleccionMesa(1);
     }
 
     Pedidos(String string, String producto_1, double d) {
@@ -35,11 +35,12 @@ public class Pedidos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         txtBuscar = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         btnModificarP = new javax.swing.JButton();
@@ -48,9 +49,10 @@ public class Pedidos extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        lblMesa = new javax.swing.JLabel();
         btnModificarP2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -81,6 +83,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton10.setForeground(new java.awt.Color(0, 0, 0));
         jButton10.setText("Mesa 1");
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 60));
 
         jButton12.setBackground(new java.awt.Color(255, 204, 0));
@@ -88,6 +95,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton12.setForeground(new java.awt.Color(0, 0, 0));
         jButton12.setText("Mesa 7");
         jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 110, 60));
 
         jButton13.setBackground(new java.awt.Color(255, 204, 0));
@@ -95,6 +107,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton13.setForeground(new java.awt.Color(0, 0, 0));
         jButton13.setText("Mesa 3");
         jButton13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 60));
 
         jButton14.setBackground(new java.awt.Color(255, 204, 0));
@@ -102,6 +119,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton14.setForeground(new java.awt.Color(0, 0, 0));
         jButton14.setText("Mesa 4");
         jButton14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 110, 60));
 
         jButton15.setBackground(new java.awt.Color(255, 204, 0));
@@ -109,6 +131,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton15.setForeground(new java.awt.Color(0, 0, 0));
         jButton15.setText("Mesa 8");
         jButton15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 60));
 
         jButton16.setBackground(new java.awt.Color(255, 204, 0));
@@ -116,6 +143,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton16.setForeground(new java.awt.Color(0, 0, 0));
         jButton16.setText("Mesa 5");
         jButton16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 60));
 
         jButton17.setBackground(new java.awt.Color(255, 204, 0));
@@ -123,6 +155,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton17.setForeground(new java.awt.Color(0, 0, 0));
         jButton17.setText("Mesa 6");
         jButton17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 110, 60));
 
         jButton18.setBackground(new java.awt.Color(255, 204, 0));
@@ -130,6 +167,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton18.setForeground(new java.awt.Color(0, 0, 0));
         jButton18.setText("Mesa 9");
         jButton18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 110, 60));
 
         jButton19.setBackground(new java.awt.Color(255, 204, 0));
@@ -137,6 +179,11 @@ public class Pedidos extends javax.swing.JFrame {
         jButton19.setForeground(new java.awt.Color(0, 0, 0));
         jButton19.setText("Mesa 2");
         jButton19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 110, 60));
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 0));
@@ -150,12 +197,24 @@ public class Pedidos extends javax.swing.JFrame {
                 txtBuscarActionPerformed(evt);
             }
         });
-        jPanel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 280, 40));
+        jPanel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 240, 40));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Productos:");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/nuevo-producto.png"))); // NOI18N
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 60, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 460, 60));
 
@@ -184,17 +243,17 @@ public class Pedidos extends javax.swing.JFrame {
         jLabel8.setText("PEDIDO");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/nuevo.png"))); // NOI18N
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButton9.setBackground(new java.awt.Color(255, 255, 255));
+        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(0, 0, 0));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/nuevo.png"))); // NOI18N
+        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButton9ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 90, 30));
+        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 90, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 460, 50));
 
@@ -286,10 +345,10 @@ public class Pedidos extends javax.swing.JFrame {
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 180, 60));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Total : ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 630, 240, 30));
+        lblMesa.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblMesa.setForeground(new java.awt.Color(0, 0, 0));
+        lblMesa.setText("Mesa : ");
+        jPanel1.add(lblMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 200, 30));
 
         btnModificarP2.setBackground(new java.awt.Color(204, 204, 204));
         btnModificarP2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -315,6 +374,11 @@ public class Pedidos extends javax.swing.JFrame {
         });
         jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 180, 60));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Total : ");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 630, 240, 30));
+
         jPanel1_imagen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 680));
 
         getContentPane().add(jPanel1_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
@@ -339,7 +403,7 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarP1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       SeleccionMesa(10);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -366,6 +430,46 @@ public class Pedidos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        SeleccionMesa(1);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        SeleccionMesa(2);
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        SeleccionMesa(3);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        SeleccionMesa(4);
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        SeleccionMesa(5);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        SeleccionMesa(6);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        SeleccionMesa(7);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        SeleccionMesa(8);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        SeleccionMesa(9);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -375,6 +479,9 @@ public class Pedidos extends javax.swing.JFrame {
         });
     }
     
+    public void SeleccionMesa(int numMesa){
+        lblMesa.setText("Mesa : "+ numMesa);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnModificarP;
@@ -396,9 +503,10 @@ public class Pedidos extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel1_imagen;
@@ -408,6 +516,7 @@ public class Pedidos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JLabel lblMesa;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 
