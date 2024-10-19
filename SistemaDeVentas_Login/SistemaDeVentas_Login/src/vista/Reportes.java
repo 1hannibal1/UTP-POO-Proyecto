@@ -200,6 +200,15 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa07ActionPerformed
         System.out.println("vista.Reportes.BtnMesa07ActionPerformed()");
+        ArrayList<Pedido> pedidos7 =  new ArrayList<>();
+                pedidos7.add(new Pedido("carlos","pollo ala brasa",3,7));
+                pedidos7.add(new Pedido("luis","aeropuerto",1,7));
+                
+                 for (Pedido pedido : pedidos7) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos7);
     }//GEN-LAST:event_BtnMesa07ActionPerformed
 
     private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa02ActionPerformed
@@ -267,19 +276,55 @@ public class Reportes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMesa05ActionPerformed
 
     private void BtnMesa06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa06ActionPerformed
-        System.out.println("vista.Reportes.Btn06ActionPerformed()");// TODO add your handling code here:
+        System.out.println("vista.Reportes.Btn06ActionPerformed()");
+        ArrayList<Pedido> pedidos6 =  new ArrayList<>();
+                pedidos6.add(new Pedido("maria","pollo ala brasa",3,6));
+                pedidos6.add(new Pedido("jean","chifa",1,6));
+                
+                 for (Pedido pedido : pedidos6) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos6);
     }//GEN-LAST:event_BtnMesa06ActionPerformed
 
     private void BtnMesa08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa08ActionPerformed
-        System.out.println("vista.Reportes.BtnMesa08ActionPerformed()");// TODO add your handling code here:
+        System.out.println("vista.Reportes.BtnMesa08ActionPerformed()");
+        ArrayList<Pedido> pedidos8 =  new ArrayList<>();
+                pedidos8.add(new Pedido("jose","pollo ala brasa",3,8));
+                pedidos8.add(new Pedido("miguel","aeropuerto",1,8));
+                
+                 for (Pedido pedido : pedidos8) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos8);
     }//GEN-LAST:event_BtnMesa08ActionPerformed
 
     private void BtnMesa09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa09ActionPerformed
-        System.out.println("vista.Reportes.BtnMesa09ActionPerformed()");// TODO add your handling code here:
+        System.out.println("vista.Reportes.BtnMesa09ActionPerformed()");
+        ArrayList<Pedido> pedidos9 =  new ArrayList<>();
+                pedidos9.add(new Pedido("raul","parrilla",3,9));
+                pedidos9.add(new Pedido("piero","aeropuerto",1,9));
+                
+                 for (Pedido pedido : pedidos9) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos9);
     }//GEN-LAST:event_BtnMesa09ActionPerformed
 
     private void BtnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa10ActionPerformed
-        System.out.println("vista.Reportes.BtnMesa10ActionPerformed()");// TODO add your handling code here:
+        System.out.println("vista.Reportes.BtnMesa10ActionPerformed()");
+        ArrayList<Pedido> pedidos10 =  new ArrayList<>();
+                pedidos10.add(new Pedido("jose","pollo ala brasa",3,10));
+                pedidos10.add(new Pedido("miguel","aeropuerto",1,10));
+                
+                 for (Pedido pedido : pedidos10) {
+                 System.out.println(pedido);
+                 }
+                 
+                 System.out.println(pedidos10);
     }//GEN-LAST:event_BtnMesa10ActionPerformed
  
    
