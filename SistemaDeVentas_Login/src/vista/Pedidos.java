@@ -2,13 +2,22 @@ package vista;
 
 import javax.swing.table.DefaultTableModel;
 import modelo.ProductoManager;
+import modelo.ProductoVenta;
 import modelo.Productos;
 
 public class Pedidos extends javax.swing.JFrame {
+    
+    private final DefaultTableModel tableModel;
+    private final DefaultTableModel tableModel2;
 
+    
     public Pedidos() {
         initComponents();
         SeleccionMesa(1);
+        tableModel = new DefaultTableModel(new String[]{"Código", "Producto", "Precio Unitario"}, 0);
+        tableModel2 = new DefaultTableModel(new String[]{"Código", "Producto", "Cantidad", "Precio Unitario"}, 0);
+        jTable3.setModel(tableModel);
+        jTable2.setModel(tableModel2);
     }
 
     Pedidos(String string, String producto_1, double d) {
@@ -35,7 +44,6 @@ public class Pedidos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         txtBuscar = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
@@ -191,30 +199,23 @@ public class Pedidos extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
+        txtBuscar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
+        txtBuscar.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtBuscar.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtBuscar.setEnabled(false);
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);
             }
         });
-        jPanel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 240, 40));
+        jPanel3.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 310, 40));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Productos:");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/nuevo-producto.png"))); // NOI18N
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 60, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 460, 60));
 
@@ -269,6 +270,11 @@ public class Pedidos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable3MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTable3);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 460, 160));
@@ -387,7 +393,7 @@ public class Pedidos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        ListarProductos("CarnesParrillas");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
@@ -399,7 +405,9 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarPActionPerformed
 
     private void btnModificarP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarP1ActionPerformed
-        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true); 
+        dispose();
     }//GEN-LAST:event_btnModificarP1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -407,19 +415,15 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        ListarProductos("Bebidas");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        ListarProductos("PolloBrasa");
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        ListarProductos("Complementos");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnModificarP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarP2ActionPerformed
@@ -427,11 +431,21 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarP2ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        ListarProductos("Piqueos");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
+        int filaSeleccionada = jTable3.getSelectedRow();
+
+        if (filaSeleccionada != -1) {
+            Object codigo = jTable3.getValueAt(filaSeleccionada, 0);
+            Object nombre = jTable3.getValueAt(filaSeleccionada, 1); 
+            Object precioUnitario = jTable3.getValueAt(filaSeleccionada, 2);
+
+            tableModel2.addRow(new Object[]{
+                codigo.toString(), nombre.toString(), 1, precioUnitario.toString()
+            });
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -470,6 +484,19 @@ public class Pedidos extends javax.swing.JFrame {
         SeleccionMesa(9);
     }//GEN-LAST:event_jButton18ActionPerformed
 
+    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
+        txtBuscar.setText("");
+        int filaSeleccionada = jTable3.getSelectedRow();
+
+        if (filaSeleccionada != -1) {
+            Object codigo = jTable3.getValueAt(filaSeleccionada, 0);
+            Object nombre = jTable3.getValueAt(filaSeleccionada, 1); 
+            Object precioUnitario = jTable3.getValueAt(filaSeleccionada, 2);
+
+            txtBuscar.setText(codigo.toString() + " - " + nombre.toString() + " - " + precioUnitario.toString());
+        }
+    }//GEN-LAST:event_jTable3MouseClicked
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -481,6 +508,18 @@ public class Pedidos extends javax.swing.JFrame {
     
     public void SeleccionMesa(int numMesa){
         lblMesa.setText("Mesa : "+ numMesa);
+    }
+    
+    public void ListarProductos(String productoSelect){
+        tableModel.setRowCount(0);
+        
+        for (Productos producto : ProductoManager.getProductos()) {
+            if (producto.getCategoria().equalsIgnoreCase(productoSelect)) {
+                tableModel.addRow(new Object[]{
+                    producto.getCodigo(), producto.getDescripcion(), producto.getPrecio()
+                });
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -500,7 +539,6 @@ public class Pedidos extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
