@@ -4,8 +4,6 @@ import javax.swing.table.DefaultTableModel;
 import modelo.ProductoManager;
 import modelo.ProductoVenta;
 import modelo.Productos;
-import modelo.Venta;
-import modelo.VentaManager;
 
 public class Reportes extends javax.swing.JFrame {
 
@@ -208,7 +206,7 @@ public class Reportes extends javax.swing.JFrame {
 
     private void jButton1_buscarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_buscarVentaActionPerformed
         int codigoVenta = Integer.parseInt(txt_codigoVenta.getText());
-        for (Venta venta : VentaManager.getVenta()) {
+        /*for (Venta venta : VentaManager.getVenta()) {
             if (codigoVenta == venta.getCodigo()) {
                 txt_nombreVenta.setText(venta.getNombreCliente());
                 txt_direccionBoleta.setText(venta.getCodigoDocumento());
@@ -231,7 +229,7 @@ public class Reportes extends javax.swing.JFrame {
                     }
                 }
             }
-        }
+        }*/
     }//GEN-LAST:event_jButton1_buscarVentaActionPerformed
 
     public static void main(String args[]) {

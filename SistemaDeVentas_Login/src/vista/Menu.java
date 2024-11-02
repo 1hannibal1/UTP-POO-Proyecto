@@ -203,9 +203,9 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1_IngresarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_IngresarVentaActionPerformed
-        IngresarVenta ingresarVenta = new IngresarVenta();
-        ingresarVenta.setVisible(true); 
-        dispose();
+        //IngresarVenta ingresarVenta = new IngresarVenta();
+        //ingresarVenta.setVisible(true); 
+        //dispose();
     }//GEN-LAST:event_jButton1_IngresarVentaActionPerformed
 
     private void jButton5_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5_SalirActionPerformed
@@ -227,9 +227,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2_ProductosActionPerformed
 
     private void jButton4_UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_UsuariosActionPerformed
-        Usuarios usuarios = new Usuarios();
-        usuarios.setVisible(true); 
-        dispose();
+        //Usuarios usuarios = new Usuarios();
+        //usuarios.setVisible(true); 
+        //dispose();
     }//GEN-LAST:event_jButton4_UsuariosActionPerformed
 
     public static void main(String args[]) {
