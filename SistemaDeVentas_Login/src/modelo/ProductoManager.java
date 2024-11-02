@@ -3,16 +3,19 @@ package modelo;
 import java.util.ArrayList;
 
 public class ProductoManager {
-    private static final ArrayList<Productos> productos;
+    private static final ArrayList<Product> productos = new ArrayList<>();
 
     static {
-        productos = new ArrayList<>();
-        productos.add(new Productos("1", "Cuaderno", 6.00));
-        productos.add(new Productos("2", "Lapiz", 2.00));
-        productos.add(new Productos("3", "Mochila", 40.00));
+        productos.add(new Product("1", "Cuaderno","Cuaderno","Cuaderno", 6.00));
+        productos.add(new Product("2", "Lapiz", "Lapiz", "Lapiz", 2.00));
+        productos.add(new Product("3", "Mochila", "Mochila", "Mochila", 40.00));
+    }
+    
+    public static void setProductos(Product producto) {
+        productos.add(producto);
     }
 
-    public static ArrayList<Productos> getProductos() {
+    public static ArrayList<Product> getProductos() {
         return productos;
     }
 }

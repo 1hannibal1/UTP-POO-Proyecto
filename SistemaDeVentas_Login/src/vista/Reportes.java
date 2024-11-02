@@ -1,9 +1,9 @@
 package vista;
 
 import javax.swing.table.DefaultTableModel;
+import modelo.Product;
 import modelo.ProductoManager;
 import modelo.ProductoVenta;
-import modelo.Productos;
 import modelo.Venta;
 import modelo.VentaManager;
 
@@ -219,7 +219,7 @@ public class Reportes extends javax.swing.JFrame {
                 double totalProducto;
 
                 for (ProductoVenta productoVenta : venta.getProductos()) {
-                    for (Productos producto : ProductoManager.getProductos()) {
+                    for (Product producto : ProductoManager.getProductos()) {
                         if (producto.getCodigo().equals(productoVenta.getCodigoProducto())) {
                             totalProducto = producto.getPrecio() * productoVenta.getCantidad();
                             tableModel.addRow(new Object[]{

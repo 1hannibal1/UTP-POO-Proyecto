@@ -5,9 +5,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.Product;
 import modelo.ProductoManager;
 import modelo.ProductoVenta;
-import modelo.Productos;
 import modelo.Venta;
 import modelo.VentaManager;
 
@@ -22,7 +22,7 @@ public class IngresarVenta extends javax.swing.JFrame {
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         txt_Fecha.setText(fechaActual.format(formatoFecha));
 
-        for (Productos producto : ProductoManager.getProductos()) {
+        for (Product producto : ProductoManager.getProductos()) {
             jComboBox1_ProductosVenta.addItem(producto.getNombre());
         }
 
@@ -339,7 +339,7 @@ public class IngresarVenta extends javax.swing.JFrame {
         int cantidad = Integer.parseInt(txt_cantidad.getText());
         double totalProducto;
         
-        for (Productos producto : ProductoManager.getProductos()) {
+        for (Product producto : ProductoManager.getProductos()) {
             if (producto.getNombre().equals(valorProducto)){
                 totalProducto = producto.getPrecio() * cantidad;
                 tableModel.addRow(new Object[]{

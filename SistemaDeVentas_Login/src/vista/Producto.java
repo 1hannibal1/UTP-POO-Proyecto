@@ -1,8 +1,8 @@
 package vista;
 
 import javax.swing.table.DefaultTableModel;
+import modelo.Product;
 import modelo.ProductoManager;
-import modelo.Productos;
 
 public class Producto extends javax.swing.JFrame {
 
@@ -14,9 +14,9 @@ public class Producto extends javax.swing.JFrame {
         tableModel = new DefaultTableModel(new String[]{"Producto", "Precio", "Categoría", "Descripción"}, 0);
         tabla_productos.setModel(tableModel);
 
-        for (Productos producto : ProductoManager.getProductos()) {
+        for (Product producto : ProductoManager.getProductos()) {
             tableModel.addRow(new Object[]{
-                producto.getCodigo(), producto.getNombre(), producto.getPrecio()
+                producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
             });
         }
     }
@@ -170,10 +170,10 @@ public class Producto extends javax.swing.JFrame {
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
         String nombreP = txt_nombreProducto.getText();
         double precioP = Double.parseDouble(txt_precioProducto.getText());
-        Productos productos = new Productos((ProductoManager.getProductos().size() + 1) + "", nombreP, precioP);
-        ProductoManager.getProductos().add(productos);
+        Product producto = new Product((ProductoManager.getProductos().size() + 1) + "", nombreP,nombreP,nombreP, precioP);
+        ProductoManager.setProductos(producto);
         tableModel.addRow(new Object[]{
-            productos.getCodigo(), productos.getNombre(), productos.getPrecio()
+            producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
         });
     }//GEN-LAST:event_jButton2_agregarProductoActionPerformed
 
@@ -205,7 +205,7 @@ public class Producto extends javax.swing.JFrame {
     public void actualizarTabla(){
         this.limpiar();
         tableModel.setRowCount(0);
-        for (Productos producto : ProductoManager.getProductos()) {
+        for (Product producto : ProductoManager.getProductos()) {
             tableModel.addRow(new Object[]{
                 producto.getCodigo(), producto.getNombre(), producto.getPrecio()
             });
