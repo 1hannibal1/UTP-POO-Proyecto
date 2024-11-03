@@ -131,7 +131,12 @@ public class Producto extends javax.swing.JFrame {
         jLabel6.setText("Categoria");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 60, 20));
 
-        cbox_categoriaProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bebidas", "Pollos a la Brasa", "Piqueos", "Complementos", "Carnes y parrillas" }));
+        cbox_categoriaProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bebidas", "Pollo a la Brasa", "Piqueos", "Complementos", "Carnes y Parrillas" }));
+        cbox_categoriaProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbox_categoriaProductosActionPerformed(evt);
+            }
+        });
         jPanel1.add(cbox_categoriaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 32, 190, 30));
 
         jPanel1_imagen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 880, 210));
@@ -170,7 +175,7 @@ public class Producto extends javax.swing.JFrame {
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
         String nombreP = txt_nombreProducto.getText();
         double precioP = Double.parseDouble(txt_precioProducto.getText());
-        Product producto = new Product((ProductoManager.getProductos().size() + 1) + "", nombreP,nombreP,nombreP, precioP);
+        Product producto = new Product((ProductoManager.getProductos().size() + 1), nombreP,nombreP,nombreP, precioP);
         ProductoManager.setProductos(producto);
         tableModel.addRow(new Object[]{
             producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
@@ -186,6 +191,10 @@ public class Producto extends javax.swing.JFrame {
     private void txt_descripcionProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_descripcionProductoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_descripcionProductoActionPerformed
+
+    private void cbox_categoriaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbox_categoriaProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbox_categoriaProductosActionPerformed
 
     public static void main(String args[]) {
 

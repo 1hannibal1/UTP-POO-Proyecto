@@ -9,13 +9,13 @@ package modelo;
  * @author user
  */
 public class Product {
-    private String codigo;
+    private int codigo;
     private String nombre;
     private String description;
     private String category;
     private double precio;
 
-    public Product(String codigo, String nombre, String description, String category, double precio) {
+    public Product(int codigo, String nombre, String description, String category, double precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.description = description;
@@ -39,11 +39,11 @@ public class Product {
         this.category = category;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

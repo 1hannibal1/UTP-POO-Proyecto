@@ -220,14 +220,14 @@ public class Reportes extends javax.swing.JFrame {
 
                 for (ProductoVenta productoVenta : venta.getProductos()) {
                     for (Product producto : ProductoManager.getProductos()) {
-                        if (producto.getCodigo().equals(productoVenta.getCodigoProducto())) {
+                        /*if (producto.getCodigo().equals(productoVenta.getCodigoProducto())) {
                             totalProducto = producto.getPrecio() * productoVenta.getCantidad();
                             tableModel.addRow(new Object[]{
                                 producto.getCodigo(), producto.getNombre(), producto.getPrecio(), productoVenta.getCantidad(), totalProducto
                             });
                             this.calcularTotal();
                             break;
-                        }
+                        }*/
                     }
                 }
             }
