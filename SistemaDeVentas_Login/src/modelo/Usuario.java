@@ -1,27 +1,24 @@
 package modelo;
 
-public class Usuario {
-    private String codigo;
-    private String nombre;
-    private String clave;
+import java.util.Scanner;
 
-    public Usuario() {
-    }
+    public class Usuario {
+    protected String nombre;
+    protected String usuario;
+    protected String password;
 
-    public Usuario(String codigo, String nombre, String clave) {
-        this.codigo = codigo;
+    // Constructor de Usuario
+    public Usuario(String nombre, String usuario, String password) {
         this.nombre = nombre;
-        this.clave = clave;
+        this.usuario = usuario;
+        this.password = password;
     }
 
-    public String getCodigo() {
-        return codigo;
+    Usuario() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -30,13 +27,38 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getClave() {
-        return clave;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
-   
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    // Método de login
+    public void login() {
+        
+        Scanner user = new Scanner(System.in);
+        System.out.println("Ingrese su usuario:");
+
+        String userText = user.nextLine();
+        Scanner password = new Scanner(System.in);
+        System.out.println("Ingrese su password:");
+        String passwordText = password.nextLine();
+        
+        if (userText.equals(getUsuario()) && passwordText.equals(getPassword())) {
+                System.out.println(getUsuario() + " ha iniciado sesión como " + this.getClass().getSimpleName());
+        } else {
+            System.out.println("Usuario o password es incorrecto:");
+        }
+        // Carlos - Mozo, 
+    }
 }
