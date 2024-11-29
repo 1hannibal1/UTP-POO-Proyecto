@@ -194,9 +194,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos4.add(new Pedido("anto","parrilla",2,4));
                 pedidos4.add(new Pedido("alex","caldo de gallina",1,4));
 
-                for (Pedido pedido : pedidos4) {
-                 System.out.println(pedido);
-                 }
+                Reporte reporte = new Reporte(4,pedidos4);
+                 this.cargarTabla(reporte.getPedidos());
 
                 System.out.println(pedidos4);
     }//GEN-LAST:event_BtnMesa04ActionPerformed
@@ -208,9 +207,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos7.add(new Pedido("carlos","pollo ala brasa",3,7));
                 pedidos7.add(new Pedido("luis","aeropuerto",1,7));
                 
-                 for (Pedido pedido : pedidos7) {
-                 System.out.println(pedido);
-                 }
+                 Reporte reporte = new Reporte(7,pedidos7);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos7);
     }//GEN-LAST:event_BtnMesa07ActionPerformed
@@ -221,9 +219,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos2.add(new Pedido("jose","pollo ala brasa",3,2));
                 pedidos2.add(new Pedido("miguel","aeropuerto",1,2));
                 
-                 for (Pedido pedido : pedidos2) {
-                 System.out.println(pedido);
-                 }
+                 Reporte reporte = new Reporte(2,pedidos2);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos2);
 
@@ -235,9 +232,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos1.add(new Pedido("vanesa","pollo ala brasa",3,1));
                 pedidos1.add(new Pedido("denil","chaufa",2,1));
 
-                for (Pedido pedido : pedidos1) {
-                 System.out.println(pedido);
-                 }
+                Reporte reporte = new Reporte(1,pedidos1);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos1);
 
@@ -258,9 +254,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos3.add(new Pedido("luis","aeropuerto",1,3));
 
 
-                for (Pedido pedido : pedidos3) {
-                 System.out.println(pedido);
-                 }
+                Reporte reporte = new Reporte(3,pedidos3);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos3);
     }//GEN-LAST:event_BtnMesa03ActionPerformed
@@ -271,9 +266,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos5.add(new Pedido("vere","parrila",2,5));
                 pedidos5.add(new Pedido("carlos","chaufa",3,5));
 
-                for (Pedido pedido : pedidos5) {
-                 System.out.println(pedido);
-                 }
+               Reporte reporte = new Reporte(5,pedidos5);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos5);
 
@@ -285,9 +279,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos6.add(new Pedido("maria","pollo ala brasa",3,6));
                 pedidos6.add(new Pedido("jean","chifa",1,6));
                 
-                 for (Pedido pedido : pedidos6) {
-                 System.out.println(pedido);
-                 }
+                 Reporte reporte = new Reporte(6,pedidos6);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos6);
     }//GEN-LAST:event_BtnMesa06ActionPerformed
@@ -298,9 +291,8 @@ public class Reportes extends javax.swing.JFrame {
                 pedidos8.add(new Pedido("jose","pollo ala brasa",3,8));
                 pedidos8.add(new Pedido("miguel","aeropuerto",1,8));
                 
-                 for (Pedido pedido : pedidos8) {
-                 System.out.println(pedido);
-                 }
+                 Reporte reporte = new Reporte(8,pedidos8);
+                 this.cargarTabla(reporte.getPedidos());
                  
                  System.out.println(pedidos8);
     }//GEN-LAST:event_BtnMesa08ActionPerformed
