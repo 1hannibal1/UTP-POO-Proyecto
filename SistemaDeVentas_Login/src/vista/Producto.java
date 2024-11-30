@@ -1,5 +1,6 @@
 package vista;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Product;
 import modelo.ProductoManager;
@@ -174,12 +175,33 @@ public class Producto extends javax.swing.JFrame {
 
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
         String nombreP = txt_nombreProducto.getText();
-        double precioP = Double.parseDouble(txt_precioProducto.getText());
-        Product producto = new Product((ProductoManager.getProductos().size() + 1), nombreP,nombreP,nombreP, precioP);
+        double precioP;
+        try {
+            precioP = Double.parseDouble(txt_precioProducto.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El precio debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        String description = txt_descripcionProducto.getText();
+        String category = (String) cbox_categoriaProductos.getSelectedItem();
+        
+        boolean exists = ProductoManager.getProductos().stream()
+            .anyMatch(producto -> producto.getNombre().equalsIgnoreCase(nombreP) && 
+                                  producto.getCategory().equalsIgnoreCase(category));
+        if (exists) {
+            JOptionPane.showMessageDialog(
+                    this, 
+                    "Ya existe un producto con el mismo nombre y categoría.", 
+                    "Advertencia", 
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Product producto = new Product((ProductoManager.getProductos().size() + 1), nombreP,description,category, precioP);
         ProductoManager.setProductos(producto);
         tableModel.addRow(new Object[]{
-            producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
+          producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
         });
+        JOptionPane.showMessageDialog(this, "Producto agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton2_agregarProductoActionPerformed
 
     private void jButton1_regresarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarProductosActionPerformed
