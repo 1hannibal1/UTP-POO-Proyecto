@@ -6,16 +6,21 @@ import modelo.ProductoVenta;
 import modelo.Productos;
 
 public class Pedidos extends javax.swing.JFrame {
-    
+
     private final DefaultTableModel tableModel;
     private final DefaultTableModel tableModel2;
 
-    
     public Pedidos() {
         initComponents();
         SeleccionMesa(1);
         tableModel = new DefaultTableModel(new String[]{"Código", "Producto", "Precio Unitario"}, 0);
-        tableModel2 = new DefaultTableModel(new String[]{"Código", "Producto", "Cantidad", "Precio Unitario"}, 0);
+        tableModel2 = new DefaultTableModel(new String[]{"Código", "Producto", "Cantidad", "Precio Unitario"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                // Bloquear columnas específicas (por ejemplo, las columnas 0 y 1)
+                return column != 0 && column != 1 && column != 3;
+            }
+        };
         jTable3.setModel(tableModel);
         jTable2.setModel(tableModel2);
     }
@@ -60,7 +65,6 @@ public class Pedidos extends javax.swing.JFrame {
         lblMesa = new javax.swing.JLabel();
         btnModificarP2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -233,7 +237,7 @@ public class Pedidos extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 460, 320));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 460, 370));
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 0));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -380,11 +384,6 @@ public class Pedidos extends javax.swing.JFrame {
         });
         jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 180, 60));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Total : ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 630, 240, 30));
-
         jPanel1_imagen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 680));
 
         getContentPane().add(jPanel1_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
@@ -401,17 +400,19 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBuscarActionPerformed
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
-
+        Venta venta = new Venta();
+        venta.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnModificarPActionPerformed
 
     private void btnModificarP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarP1ActionPerformed
         Menu menu = new Menu();
-        menu.setVisible(true); 
+        menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnModificarP1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       SeleccionMesa(10);
+        SeleccionMesa(10);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -427,7 +428,7 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnModificarP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarP2ActionPerformed
-        // TODO add your handling code here:
+        LimpiarTablas();
     }//GEN-LAST:event_btnModificarP2ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -437,14 +438,23 @@ public class Pedidos extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         int filaSeleccionada = jTable3.getSelectedRow();
 
-        if (filaSeleccionada != -1) {
-            Object codigo = jTable3.getValueAt(filaSeleccionada, 0);
-            Object nombre = jTable3.getValueAt(filaSeleccionada, 1); 
-            Object precioUnitario = jTable3.getValueAt(filaSeleccionada, 2);
+        boolean boolagregar = true;
+        for (int i = 0; i < jTable2.getRowCount(); i++) {
+            Object value = jTable2.getValueAt(i, 0);
+            if (jTable3.getValueAt(filaSeleccionada, 0).toString().equals(value.toString())) {
+                boolagregar = false;
+            }
+        }
+        if (boolagregar) {
+            if (filaSeleccionada != -1) {
+                Object codigo = jTable3.getValueAt(filaSeleccionada, 0);
+                Object nombre = jTable3.getValueAt(filaSeleccionada, 1);
+                Object precioUnitario = jTable3.getValueAt(filaSeleccionada, 2);
 
-            tableModel2.addRow(new Object[]{
-                codigo.toString(), nombre.toString(), 1, precioUnitario.toString()
-            });
+                tableModel2.addRow(new Object[]{
+                    codigo.toString(), nombre.toString(), 1, precioUnitario.toString()
+                });
+            }
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -490,7 +500,7 @@ public class Pedidos extends javax.swing.JFrame {
 
         if (filaSeleccionada != -1) {
             Object codigo = jTable3.getValueAt(filaSeleccionada, 0);
-            Object nombre = jTable3.getValueAt(filaSeleccionada, 1); 
+            Object nombre = jTable3.getValueAt(filaSeleccionada, 1);
             Object precioUnitario = jTable3.getValueAt(filaSeleccionada, 2);
 
             txtBuscar.setText(codigo.toString() + " - " + nombre.toString() + " - " + precioUnitario.toString());
@@ -505,14 +515,13 @@ public class Pedidos extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void SeleccionMesa(int numMesa){
-        lblMesa.setText("Mesa : "+ numMesa);
+
+    public void SeleccionMesa(int numMesa) {
+        lblMesa.setText("Mesa : " + numMesa);
     }
-    
-    public void ListarProductos(String productoSelect){
+
+    public void ListarProductos(String productoSelect) {
         tableModel.setRowCount(0);
-        
         for (Productos producto : ProductoManager.getProductos()) {
             if (producto.getCategoria().equalsIgnoreCase(productoSelect)) {
                 tableModel.addRow(new Object[]{
@@ -520,6 +529,12 @@ public class Pedidos extends javax.swing.JFrame {
                 });
             }
         }
+    }
+
+    public void LimpiarTablas() {
+        tableModel.setRowCount(0);
+        tableModel2.setRowCount(0);
+        txtBuscar.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -544,7 +559,6 @@ public class Pedidos extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel1_imagen;

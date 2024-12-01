@@ -197,7 +197,9 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteActionPerformed
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
-
+        Pedidos pedidos = new Pedidos();
+        pedidos.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnModificarPActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
