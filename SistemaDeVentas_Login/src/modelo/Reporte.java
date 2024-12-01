@@ -27,7 +27,7 @@ public class Reporte {
         } else {
             for (Pedido pedido : pedidos) {
                 System.out.println("Cliente: " + pedido.getNombreCliente() + 
-                                   ", Producto: " + pedido.getNombreProducto() + 
+                                   ", Producto: " + pedido.getProduct() + 
                                    ", Cantidad: " + pedido.getCantidad());
             }
         }

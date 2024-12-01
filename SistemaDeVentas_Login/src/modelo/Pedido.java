@@ -2,15 +2,15 @@ package modelo;
 
 public class Pedido {
     private String nombreCliente;
-    private String nombreProducto;
+    private Product product;
     private int cantidad;
     private int numeroMesa;
     private int precio;
 
 // constructor 
-    public Pedido(String nombreCliente, String nombreProducto, int cantidad, int numeroMesa) {
+    public Pedido(String nombreCliente, Product product, int cantidad, int numeroMesa) {
         this.nombreCliente = nombreCliente;
-        this.nombreProducto = nombreProducto;
+        this.product = product;
         this.cantidad = cantidad;
         this.numeroMesa = numeroMesa;
     }
@@ -18,8 +18,8 @@ public class Pedido {
     public String getNombreCliente() {
         return nombreCliente;
     }
-    public String getNombreProducto() {
-        return nombreProducto;
+    public Product getProduct() {
+        return product;
     }
 
     public int getCantidad() {
@@ -32,6 +32,6 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Mesa: " + numeroMesa + ", Cliente: " + nombreCliente + ", Producto: " + nombreProducto + ", Cantidad: " + cantidad;
+        return "Mesa: " + numeroMesa + ", Cliente: " + nombreCliente + ", Producto: " + product + ", Cantidad: " + cantidad;
     }
 }

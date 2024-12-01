@@ -4,6 +4,8 @@ package vista;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.Pedido;
+import modelo.Product;
+import modelo.ProductoManager;
 import modelo.Reporte;
 
 public class Reportes extends javax.swing.JFrame {
@@ -190,9 +192,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa04ActionPerformed
         System.out.println("vista.Reportes.BtnMesa04ActionPerformed()");
+        Product product4 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product4=product;
+        }
         ArrayList<Pedido> pedidos4 = new ArrayList<>();
-                pedidos4.add(new Pedido("anto","parrilla",2,20));
-                pedidos4.add(new Pedido("alex","caldo de gallina",1,10));
+                pedidos4.add(new Pedido("anto", product4,2,20));
+                pedidos4.add(new Pedido("alex", product4,1,10));
 
                 Reporte reporte = new Reporte(4,pedidos4);
                  this.cargarTabla(reporte.getPedidos());
@@ -203,9 +210,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa07ActionPerformed
         System.out.println("vista.Reportes.BtnMesa07ActionPerformed()");
+        Product product7 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product7=product;
+        }
         ArrayList<Pedido> pedidos7 =  new ArrayList<>();
-                pedidos7.add(new Pedido("carlos","pollo ala brasa",3,16));
-                pedidos7.add(new Pedido("luis","aeropuerto",1,15));
+                pedidos7.add(new Pedido("carlos", product7,3,16));
+                pedidos7.add(new Pedido("luis", product7,1,15));
                 
                  Reporte reporte = new Reporte(7,pedidos7);
                  this.cargarTabla(reporte.getPedidos());
@@ -215,9 +227,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa02ActionPerformed
         System.out.println("vista.Reportes.Btn02ActionPerformed()");
+        Product product2 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product2=product;
+        }
         ArrayList<Pedido> pedidos2 =  new ArrayList<>();
-                pedidos2.add(new Pedido("jose","pollo ala brasa",3,16));
-                pedidos2.add(new Pedido("miguel","aeropuerto",1,15));
+                pedidos2.add(new Pedido("jose",product2,3,16));
+                pedidos2.add(new Pedido("miguel",product2,1,15));
                 
                  Reporte reporte = new Reporte(2,pedidos2);
                  this.cargarTabla(reporte.getPedidos());
@@ -228,9 +245,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa01ActionPerformed
         System.out.println("vista.Reportes.Btn01ActionPerformed()");
+            Product product1 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product1=product;
+        }
         ArrayList<Pedido> pedidos1 = new ArrayList<>();
-                pedidos1.add(new Pedido("vanesa","pollo ala brasa",3,16));
-                pedidos1.add(new Pedido("denil","chaufa",2,10));
+                pedidos1.add(new Pedido("vanesa",product1,3,16));
+                pedidos1.add(new Pedido("denil",product1,2,10));
 
                 Reporte reporte = new Reporte(1,pedidos1);
                  this.cargarTabla(reporte.getPedidos());
@@ -248,10 +270,15 @@ public class Reportes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1_regresarProductosActionPerformed
 
     private void BtnMesa03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa03ActionPerformed
-        System.out.println("vista.Reportes.Btn03ActionPerformed()");// TODO add your handling code here:
+        System.out.println("vista.Reportes.Btn03ActionPerformed()");
+                Product product3 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product3=product;
+        }
         ArrayList<Pedido> pedidos3 = new ArrayList<>();
-                pedidos3.add(new Pedido("kim","pollo a la plancha",3,16));
-                pedidos3.add(new Pedido("luis","aeropuerto",1,15));
+                pedidos3.add(new Pedido("kim", product3,3,16));
+                pedidos3.add(new Pedido("luis", product3,1,15));
 
 
                 Reporte reporte = new Reporte(3,pedidos3);
@@ -261,10 +288,15 @@ public class Reportes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMesa03ActionPerformed
 
     private void BtnMesa05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa05ActionPerformed
-        System.out.println("vista.Reportes.Btn05ActionPerformed()");// TODO add your handling code here:
+        System.out.println("vista.Reportes.Btn05ActionPerformed()");
+        Product product5 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product5=product;
+        }
         ArrayList<Pedido> pedidos5 = new ArrayList<>();
-                pedidos5.add(new Pedido("vere","parrila",2,20));
-                pedidos5.add(new Pedido("carlos","chaufa",3,10));
+                pedidos5.add(new Pedido("vere",product5,2,20));
+                pedidos5.add(new Pedido("carlos",product5,3,10));
 
                Reporte reporte = new Reporte(5,pedidos5);
                  this.cargarTabla(reporte.getPedidos());
@@ -275,9 +307,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa06ActionPerformed
         System.out.println("vista.Reportes.Btn06ActionPerformed()");
+        Product product6 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product6=product;
+        }
         ArrayList<Pedido> pedidos6 =  new ArrayList<>();
-                pedidos6.add(new Pedido("maria","pollo ala brasa",3,16));
-                pedidos6.add(new Pedido("jean","chifa",1,10));
+                pedidos6.add(new Pedido("maria",product6,3,16));
+                pedidos6.add(new Pedido("jean",product6,1,10));
                 
                  Reporte reporte = new Reporte(6,pedidos6);
                  this.cargarTabla(reporte.getPedidos());
@@ -287,9 +324,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa08ActionPerformed
         System.out.println("vista.Reportes.BtnMesa08ActionPerformed()");
+        Product product7 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product7=product;
+        }
         ArrayList<Pedido> pedidos8 =  new ArrayList<>();
-                pedidos8.add(new Pedido("jose","pollo ala brasa",3,16));
-                pedidos8.add(new Pedido("miguel","aeropuerto",1,15));
+                pedidos8.add(new Pedido("jose",product7,3,16));
+                pedidos8.add(new Pedido("miguel",product7,1,15));
                 
                  Reporte reporte = new Reporte(8,pedidos8);
                  this.cargarTabla(reporte.getPedidos());
@@ -299,9 +341,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa09ActionPerformed
         System.out.println("vista.Reportes.BtnMesa09ActionPerformed()");
+        Product product9 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product9=product;
+        }
         ArrayList<Pedido> pedidos9 =  new ArrayList<>();
-                pedidos9.add(new Pedido("raul","parrilla",3,20));
-                pedidos9.add(new Pedido("piero","aeropuerto",1,15));
+                pedidos9.add(new Pedido("raul",product9,3,20));
+                pedidos9.add(new Pedido("piero",product9,1,15));
                 
                 Reporte reporte = new Reporte(9,pedidos9);
                  this.cargarTabla(reporte.getPedidos());
@@ -311,9 +358,14 @@ public class Reportes extends javax.swing.JFrame {
 
     private void BtnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa10ActionPerformed
         System.out.println("vista.Reportes.BtnMesa10ActionPerformed()");
+        Product product10 = null;
+        for
+                (Product product : ProductoManager.getProductos() ) {
+                 product10=product;
+        }
         ArrayList<Pedido> pedidos10 =  new ArrayList<>();
-                pedidos10.add(new Pedido("jose","pollo ala brasa",3,16));
-                pedidos10.add(new Pedido("enrrique","aeropuerto",1,15));
+                pedidos10.add(new Pedido("jose",product10,3,16));
+                pedidos10.add(new Pedido("enrrique",product10,1,15));
                 
                  Reporte reporte = new Reporte(10,pedidos10);
                  this.cargarTabla(reporte.getPedidos());
@@ -362,7 +414,7 @@ public class Reportes extends javax.swing.JFrame {
             for (Pedido pedido : listaPedido ) {
                    System.out.println(pedido);
                    tableModel.addRow(new Object[]{
-                   pedido.getCantidad(), pedido.getNombreProducto(),pedido.getNumeroMesa()
+                   pedido.getCantidad(), pedido.getProduct(),pedido.getNumeroMesa()
                    });
                  }
     
