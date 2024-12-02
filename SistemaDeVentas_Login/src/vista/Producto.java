@@ -174,16 +174,24 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1_actualizarProductoActionPerformed
 
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
-        String nombreP = txt_nombreProducto.getText();
+        String nombreP = txt_nombreProducto.getText().trim();
+        String description = txt_descripcionProducto.getText().trim();
+        String category = (String) cbox_categoriaProductos.getSelectedItem();
         double precioP;
+        if (nombreP.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El nombre del producto no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (description.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "La descripción no puede estar vacía.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         try {
             precioP = Double.parseDouble(txt_precioProducto.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "El precio debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        String description = txt_descripcionProducto.getText();
-        String category = (String) cbox_categoriaProductos.getSelectedItem();
         
         boolean exists = ProductoManager.getProductos().stream()
             .anyMatch(producto -> producto.getNombre().equalsIgnoreCase(nombreP) && 
