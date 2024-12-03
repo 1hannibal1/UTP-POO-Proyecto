@@ -2,13 +2,13 @@ package modelo;
 
 public class Pedido {
     private String nombreCliente;
-    private Product product;
+    private Productos product;
     private int cantidad;
     private int numeroMesa;
     private int precio;
 
 // constructor 
-    public Pedido(String nombreCliente, Product product, int cantidad, int numeroMesa) {
+    public Pedido(String nombreCliente, Productos product, int cantidad, int numeroMesa) {
         this.nombreCliente = nombreCliente;
         this.product = product;
         this.cantidad = cantidad;
@@ -18,7 +18,7 @@ public class Pedido {
     public String getNombreCliente() {
         return nombreCliente;
     }
-    public Product getProduct() {
+    public Productos getProduct() {
         return product;
     }
 

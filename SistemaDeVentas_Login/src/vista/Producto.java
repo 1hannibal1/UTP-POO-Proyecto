@@ -2,7 +2,7 @@ package vista;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import modelo.Product;
+import modelo.Productos;
 import modelo.ProductoManager;
 
 public class Producto extends javax.swing.JFrame {
@@ -15,9 +15,9 @@ public class Producto extends javax.swing.JFrame {
         tableModel = new DefaultTableModel(new String[]{"Producto", "Precio", "Categoría", "Descripción"}, 0);
         tabla_productos.setModel(tableModel);
 
-        for (Product producto : ProductoManager.getProductos()) {
+        for (Productos producto : ProductoManager.getProductos()) {
             tableModel.addRow(new Object[]{
-                producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
+                producto.getNombre(), producto.getPrecio(), producto.getCategoria(), producto.getDescripcion()
             });
         }
     }
@@ -187,7 +187,7 @@ public class Producto extends javax.swing.JFrame {
         
         boolean exists = ProductoManager.getProductos().stream()
             .anyMatch(producto -> producto.getNombre().equalsIgnoreCase(nombreP) && 
-                                  producto.getCategory().equalsIgnoreCase(category));
+                                  producto.getCategoria().equalsIgnoreCase(category));
         if (exists) {
             JOptionPane.showMessageDialog(
                     this, 
@@ -196,10 +196,11 @@ public class Producto extends javax.swing.JFrame {
                     JOptionPane.WARNING_MESSAGE);
             return;
         }
-        Product producto = new Product((ProductoManager.getProductos().size() + 1), nombreP,description,category, precioP);
+        
+        Productos producto = new Productos((ProductoManager.getProductos().size() + 1), nombreP, precioP, category, description);
         ProductoManager.setProductos(producto);
         tableModel.addRow(new Object[]{
-          producto.getNombre(), producto.getPrecio(), producto.getCategory(), producto.getDescription()
+          producto.getNombre(), producto.getPrecio(), producto.getCategoria(), producto.getDescripcion()
         });
         JOptionPane.showMessageDialog(this, "Producto agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton2_agregarProductoActionPerformed
@@ -236,7 +237,7 @@ public class Producto extends javax.swing.JFrame {
     public void actualizarTabla(){
         this.limpiar();
         tableModel.setRowCount(0);
-        for (Product producto : ProductoManager.getProductos()) {
+        for (Productos producto : ProductoManager.getProductos()) {
             tableModel.addRow(new Object[]{
                 producto.getCodigo(), producto.getNombre(), producto.getPrecio()
             });
