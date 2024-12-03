@@ -175,24 +175,20 @@ public class Producto extends javax.swing.JFrame {
 
     private void jButton1_actualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_actualizarProductoActionPerformed
         String codigoB = txt_codigoProductos.getText();
-        for (Productos producto : ProductoManager.getProductos()) {
-            if (producto.getCodigo().equals(codigoB)) {
-                producto.setNombre(txt_nombreProducto.getText());
-                producto.setPrecio(Double.parseDouble(txt_precioProducto.getText()));
-                this.actualizarTabla();
-                break;
-            }
-        }
+        //for (Productos producto : ProductoManager.getProductos()) {
+          //  if (producto.getCodigo().equals(codigoB)) {
+            //    producto.setNombre(txt_nombreProducto.getText());
+              //  producto.setPrecio(Double.parseDouble(txt_precioProducto.getText()));
+                //this.actualizarTabla();
+                //break;
+            //}
+        //}
     }//GEN-LAST:event_jButton1_actualizarProductoActionPerformed
 
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
         String nombreP = txt_nombreProducto.getText();
         double precioP = Double.parseDouble(txt_precioProducto.getText());
-        Productos productos = new Productos((ProductoManager.getProductos().size() + 1) + "", nombreP, precioP);
-        ProductoManager.getProductos().add(productos);
-        tableModel.addRow(new Object[]{
-            productos.getCodigo(), productos.getNombre(), productos.getPrecio()
-        });
+        
     }//GEN-LAST:event_jButton2_agregarProductoActionPerformed
 
     private void jButton1_regresarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarProductosActionPerformed
@@ -204,13 +200,7 @@ public class Producto extends javax.swing.JFrame {
     private void jButton1_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_BuscarActionPerformed
         String codigoB = txt_codigoProductos.getText();
 
-        for (Productos producto : ProductoManager.getProductos()) {
-            if (producto.getCodigo().equals(codigoB)) {
-                txt_nombreProducto.setText(producto.getNombre());
-                txt_precioProducto.setText(producto.getPrecio() + "");
-                break;
-            }
-        }
+        
     }//GEN-LAST:event_jButton1_BuscarActionPerformed
 
     public static void main(String args[]) {

@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
 import modelo.ProductoManager;
@@ -188,6 +189,10 @@ public class Venta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void rdButtonBoletaActionPerformed(java.awt.event.ActionEvent evt) {
+        // Aquí va el código que deseas ejecutar al hacer clic en el botón
+    }
+    
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
