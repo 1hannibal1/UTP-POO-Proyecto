@@ -227,9 +227,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2_ProductosActionPerformed
 
     private void jButton4_UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_UsuariosActionPerformed
-        //Usuarios usuarios = new Usuarios();
-        //usuarios.setVisible(true); 
-        //dispose();
+        Producto producto = new Producto();
+        producto.setVisible(true); 
+        dispose();
     }//GEN-LAST:event_jButton4_UsuariosActionPerformed
 
     public static void main(String args[]) {

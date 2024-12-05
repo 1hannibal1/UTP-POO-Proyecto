@@ -8,6 +8,7 @@ import modelo.ProductoManager;
 public class Producto extends javax.swing.JFrame {
 
     private final DefaultTableModel tableModel;
+    private int selectedCodeProduct;
 
     public Producto() {
         initComponents();
@@ -20,10 +21,35 @@ public class Producto extends javax.swing.JFrame {
                 producto.getNombre(), producto.getPrecio(), producto.getCategoria(), producto.getDescripcion()
             });
         }
+        
+        tabla_productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Producto.this.selectRowValues();
+            }
+        });
     }
 
     Producto(String string, String producto_1, double d) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    private void selectRowValues() {
+        int selectedRow = tabla_productos.getSelectedRow(); // Obtén la fila seleccionada
+                if (selectedRow != -1) {
+                    // Obtén los valores de las columnas en la fila seleccionada
+                    String nombre = tabla_productos.getValueAt(selectedRow, 0).toString();
+                    String precio = tabla_productos.getValueAt(selectedRow, 1).toString();
+                    String categoria = tabla_productos.getValueAt(selectedRow, 2).toString();
+                    String descripcion = tabla_productos.getValueAt(selectedRow, 3).toString();
+                    
+                    this.selectedCodeProduct = ProductoManager.buscarProductoPorNombreYCategoria(nombre, categoria)
+                            .getCodigo();
+                    // Asigna los valores a los campos del formulario
+                    txt_nombreProducto.setText(nombre);
+                    txt_precioProducto.setText(precio);
+                    txt_descripcionProducto.setText(descripcion);
+                    cbox_categoriaProductos.setSelectedItem(categoria);
+                }
     }
 
     @SuppressWarnings("unchecked")
@@ -170,7 +196,32 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_nombreProductoActionPerformed
 
     private void jButton1_actualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_actualizarProductoActionPerformed
-        
+        String nombreP = txt_nombreProducto.getText().trim();
+        String description = txt_descripcionProducto.getText().trim();
+        String category = (String) cbox_categoriaProductos.getSelectedItem();
+        double precioP;
+        if (nombreP.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El nombre del producto no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (description.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "La descripción no puede estar vacía.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try {
+            precioP = Double.parseDouble(txt_precioProducto.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El precio debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Productos productoSelect = ProductoManager.buscarProductoPorCodigo(this.selectedCodeProduct);
+        if(productoSelect != null){
+            productoSelect.setNombre(nombreP);
+            productoSelect.setCategoria(category);
+            productoSelect.setPrecio(precioP);
+            productoSelect.setDescripcion(description);
+            this.actualizarTabla();
+        }
     }//GEN-LAST:event_jButton1_actualizarProductoActionPerformed
 
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
@@ -239,17 +290,21 @@ public class Producto extends javax.swing.JFrame {
     public void limpiar(){
         txt_nombreProducto.setText("");
         txt_precioProducto.setText("");
-        //txt_codigoProductos.setText("");
+        txt_descripcionProducto.setText("");
+    }
+    
+    private void cargarTabla(){
+        tableModel.setRowCount(0);
+        for (Productos producto : ProductoManager.getProductos()) {
+            tableModel.addRow(new Object[]{
+                producto.getNombre(), producto.getPrecio(), producto.getCategoria(), producto.getDescripcion()
+            });
+        }
     }
     
     public void actualizarTabla(){
         this.limpiar();
-        tableModel.setRowCount(0);
-        for (Productos producto : ProductoManager.getProductos()) {
-            tableModel.addRow(new Object[]{
-                producto.getCodigo(), producto.getNombre(), producto.getPrecio()
-            });
-        }
+        this.cargarTabla();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
