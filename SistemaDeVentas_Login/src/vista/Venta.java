@@ -223,7 +223,7 @@ public class Venta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTlelefonoActionPerformed
 
-    private void rdButtobtnModificarPonPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdButtonBoletaActionPerformed
+    private void rdButtonBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdButtonBoletaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdButtonBoletaActionPerformed
 

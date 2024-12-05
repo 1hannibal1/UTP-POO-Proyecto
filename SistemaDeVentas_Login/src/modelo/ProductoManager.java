@@ -3,7 +3,7 @@ package modelo;
 import java.util.ArrayList;
 
 public class ProductoManager {
-    private static final ArrayList<Productos> productos;
+    private static ArrayList<Productos> productos = new ArrayList<>();
 
     static {
         productos = new ArrayList<>();
@@ -17,6 +17,10 @@ public class ProductoManager {
         productos.add(new Productos(8, "Complementos2", 80.0, "Complementos", "Complementos2"));
         productos.add(new Productos(9, "CarnesParrillas1", 90.0, "CarnesParrillas", "CarnesParrillas1"));
         productos.add(new Productos(10, "CarnesParrillas2", 100.0, "CarnesParrillas", "CarnesParrillas2"));
+    }
+    
+    public static void setProductos(Productos producto) {
+        productos.add(producto);
     }
 
     public static ArrayList<Productos> getProductos() {
