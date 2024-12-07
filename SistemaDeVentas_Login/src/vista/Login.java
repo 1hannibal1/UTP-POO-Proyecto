@@ -3,7 +3,11 @@ package vista;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import modelo.Usuario;
 import modelo.UsuarioManager;
+import modelo.Usuarios.Cajero;
+import modelo.Usuarios.Gerente;
+import modelo.Usuarios.Mozo;
 
 public class Login extends javax.swing.JFrame {
 
@@ -12,7 +16,7 @@ public class Login extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setTitle("Login - SISTEMA DE VENTAS");
-        this.setSize(new Dimension(700, 500));
+        this.setSize(new Dimension(400, 500));
 
     }
 
@@ -45,17 +49,17 @@ public class Login extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(228, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(201, 201, 201))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 70));
@@ -71,10 +75,10 @@ public class Login extends javax.swing.JFrame {
                 txt_usuarioKeyPressed(evt);
             }
         });
-        getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 40));
+        getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 220, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user2.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 41, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 41, -1));
 
         txt_clave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_clave.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -82,10 +86,10 @@ public class Login extends javax.swing.JFrame {
                 txt_claveKeyPressed(evt);
             }
         });
-        getContentPane().add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 220, 40));
+        getContentPane().add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 220, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/password.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 41, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 41, -1));
 
         jButton_IniciarSesion.setBackground(new java.awt.Color(255, 204, 51));
         jButton_IniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -96,13 +100,14 @@ public class Login extends javax.swing.JFrame {
                 jButton_IniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 179, 35));
+        getContentPane().add(jButton_IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 179, 35));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pollo feliz.png"))); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(200, 273));
         jLabel3.setMinimumSize(new java.awt.Dimension(200, 273));
         jLabel3.setPreferredSize(new java.awt.Dimension(100, 100));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 200, 150));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 200, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,14 +153,35 @@ public class Login extends javax.swing.JFrame {
     private void Login() {
         String usuario = txt_usuario.getText();
         String clave = new String(txt_clave.getPassword());
+        
+        //Usuario cajero = UsuarioManager.getCajero();
+        //Usuario mozo = UsuarioManager.getMozo();
+        //Usuario gerente = UsuarioManager.getGerente();
+        
+        /*Cajero cajero = (Cajero) UsuarioManager.getCajero();
+        Mozo mozo = (Mozo) UsuarioManager.getMozo();
+        Gerente gerente = (Gerente) UsuarioManager.getGerente();
+        */
+        Usuario usuarioActual = UsuarioManager.validarTipoUsuario(usuario, clave);
+        if (usuarioActual != null) {
+            JOptionPane.showMessageDialog(this,"BIENVENIDO " +usuarioActual.getNombre());
+            
+            if (usuarioActual instanceof Mozo) {
+                MenuMozo menuMozo = new MenuMozo();
+                menuMozo.setVisible(true); 
+            }else if (usuarioActual instanceof Cajero){
+                MenuCajero menuCajero = new MenuCajero();
+                menuCajero.setVisible(true);
+            }else if (usuarioActual instanceof Gerente){
+                Menu menu = new Menu();
+                menu.setVisible(true);
+            }else {
+                JOptionPane.showInternalMessageDialog(this,"Usuario desconocido","Error",JOptionPane.ERROR_MESSAGE);
+            }
 
-        if (UsuarioManager.validarUsuario(usuario, clave)) {
-            JOptionPane.showMessageDialog(this, "BIENVENIDO");
-            Menu menu = new Menu();
-            menu.setVisible(true);
-            dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Usuario y/o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
+        
+ 
+ 
