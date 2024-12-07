@@ -1,12 +1,12 @@
 package modelo;
 
+import interfaces.CollectionCustom;
 import java.util.ArrayList;
 
 public class ProductoManager {
-    private static ArrayList<Productos> productos = new ArrayList<>();
+    private static CollectionCustom<Productos> productos = new CollectionCustom<>();
 
     static {
-        productos = new ArrayList<>();
         productos.add(new Productos(1, "Bebidas1", 10.0, "Bebidas", "Bebidas1"));
         productos.add(new Productos(2, "Bebidas2", 20.0, "Bebidas", "Bebidas2"));
         productos.add(new Productos(3, "PolloBrasa1", 30.0, "Piqueos", "PolloBrasa1"));
@@ -16,17 +16,15 @@ public class ProductoManager {
         productos.add(producto);
     }
 
-    public static ArrayList<Productos> getProductos() {
+    public static CollectionCustom<Productos> getProductos() {
         return productos;
     }
     
     public static Productos buscarProductoPorCodigo(int codigoBuscado) {
-        for (Productos producto : productos) {
-            if (producto.getCodigo() == codigoBuscado) {
-                return producto; // Retorna el producto si encuentra el código
-            }
-        }
-        return null; // Retorna null si no encuentra el producto
+        return productos.stream() // productos es la instancia de CollectionCustom
+            .filter(producto -> producto.getCodigo() == codigoBuscado)
+            .findFirst()
+            .orElse(null);
     }
     
     public static Productos buscarProductoPorNombreYCategoria(String nombreBuscado, String categoriaBuscada) {

@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controller;
+package interfaces;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.function.Consumer;
-import javax.sound.midi.Sequencer;
 
 /**
  *
@@ -19,49 +18,43 @@ public class CollectionCustom<E>
     
     private LinkedList<E> collection;
 
-    public CollectionPerson() {
+    public CollectionCustom() {
         this.collection = new LinkedList<>();
     }
     
     @Override
     public E getFirst() {
-        if (collection.isEmpty()) {
-            return null;
-        }
-        return collection.getFirst();
+        return collection.isEmpty() ? null : collection.getFirst();
     }
 
     @Override
     public E getLast() {
-        if (collection.isEmpty()) {
-            return null; // O lanza una excepción si lo prefieres
-        }
-        return collection.getLast();
+        return collection.isEmpty() ? null : collection.getLast();
     }
 
     @Override
     public void addFirst(E e) {
-        collection.add(e);
+        collection.addFirst(e);
     }
 
     @Override
     public E removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.isEmpty() ? null : collection.removeFirst();
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.size();
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.isEmpty();
     }
 
     @Override
     public boolean contains(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.contains(o);
     }
 
     @Override
@@ -76,47 +69,47 @@ public class CollectionCustom<E>
 
     @Override
     public <E> E[] toArray(E[] a) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.toArray(a);
     }
 
     @Override
     public boolean add(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.add(e);
     }
 
     @Override
     public boolean remove(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.remove(o);
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.containsAll(c);
     }
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.addAll(c);
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.removeAll(c);
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return collection.retainAll(c);
     }
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        collection.clear();
     }
 
     @Override
     public void forEach(Consumer<? super E> action) {
-        SequencedCollection.super.forEach(action); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        collection.forEach(action);
     }
     
 }
