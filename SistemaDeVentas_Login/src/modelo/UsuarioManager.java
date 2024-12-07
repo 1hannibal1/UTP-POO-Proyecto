@@ -11,6 +11,18 @@ public class UsuarioManager {
     private static Usuario mozo;
     private static Usuario gerente;
 
+    public static Usuario getCajero() {
+        return cajero;
+    }
+
+    public static Usuario getMozo() {
+        return mozo;
+    }
+
+    public static Usuario getGerente() {
+        return gerente;
+    }
+    
     public static boolean validarUsuario(String usuario, String clave){
         System.out.println(usuario);
         System.out.println(clave);
@@ -33,7 +45,18 @@ public class UsuarioManager {
        gerente = new Gerente("Vanesa", "vanesa","789");
     }
     
-    public static Usuario validarTipoUsuario(Usuario user){
-        return new Usuario();
+    public static Usuario validarTipoUsuario(String usuario, String clave){
+
+        if (usuario.equals(cajero.getUsuario()) && clave.equals(cajero.getPassword())) {
+            return cajero;
+        }else if(usuario.equals(mozo.getUsuario()) && clave.equals(mozo.getPassword())) {
+            return mozo;
+        }else if(usuario.equals(gerente.getUsuario()) && clave.equals(gerente.getPassword())) {
+            return gerente;
+        } 
+        return null;
+    
     }
+    
+    
 }
