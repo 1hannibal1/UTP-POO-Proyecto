@@ -14,7 +14,7 @@ import javax.sound.midi.Sequencer;
  *
  * @author LAB-USR-SJL
  */
-public class CollectionPerson<E> 
+public class CollectionCustom<E> 
         implements SequencedCollection<E> {
     
     private LinkedList<E> collection;
