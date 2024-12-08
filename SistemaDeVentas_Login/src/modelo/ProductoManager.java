@@ -1,7 +1,6 @@
 package modelo;
 
 import interfaces.CollectionCustom;
-import java.util.ArrayList;
 
 public class ProductoManager {
     private static CollectionCustom<Productos> productos = new CollectionCustom<>();
