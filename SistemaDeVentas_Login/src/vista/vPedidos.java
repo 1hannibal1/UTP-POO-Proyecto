@@ -2,18 +2,25 @@ package vista;
 
 import javax.swing.table.DefaultTableModel;
 import modelo.ProductoManager;
-import modelo.ProductoVenta;
+import modelo.PedidoTemp;
+import modelo.Pedidos;
 import modelo.Productos;
 
-public class Pedidos extends javax.swing.JFrame {
+public class vPedidos extends javax.swing.JFrame {
 
     private final DefaultTableModel tableModel;
     private final DefaultTableModel tableModel2;
 
-    public Pedidos() {
+    public vPedidos() {
         initComponents();
         SeleccionMesa(1);
-        tableModel = new DefaultTableModel(new String[]{"Código", "Producto", "Precio Unitario"}, 0);
+        tableModel = new DefaultTableModel(new String[]{"Código", "Producto", "Precio Unitario"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                // Bloquear columnas específicas (por ejemplo, las columnas 0 y 1)
+                return column != 0 && column != 1 && column != 2;
+            }
+        };
         tableModel2 = new DefaultTableModel(new String[]{"Código", "Producto", "Cantidad", "Precio Unitario"}, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -23,9 +30,20 @@ public class Pedidos extends javax.swing.JFrame {
         };
         jTable3.setModel(tableModel);
         jTable2.setModel(tableModel2);
+
+        for (Pedidos pedidoTemp : PedidoTemp.getPedidos()) {
+            for (Productos producto : ProductoManager.getProductos()) {
+                if (producto.getCodigo() == pedidoTemp.getCodigo()) {
+                    tableModel2.addRow(new Object[]{
+                        producto.getCodigo(), producto.getNombre(), pedidoTemp.getCantidad(), producto.getPrecio()
+                    });
+                    break;
+                }
+            }
+        }
     }
 
-    Pedidos(String string, String producto_1, double d) {
+    vPedidos(String string, String producto_1, double d) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -62,9 +80,10 @@ public class Pedidos extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        lblMesa = new javax.swing.JLabel();
+        text_Mesa = new javax.swing.JLabel();
         btnModificarP2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        lblMesa1 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -355,10 +374,9 @@ public class Pedidos extends javax.swing.JFrame {
         });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 180, 60));
 
-        lblMesa.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblMesa.setForeground(new java.awt.Color(0, 0, 0));
-        lblMesa.setText("Mesa : ");
-        jPanel1.add(lblMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 200, 30));
+        text_Mesa.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        text_Mesa.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(text_Mesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 90, 30));
 
         btnModificarP2.setBackground(new java.awt.Color(204, 204, 204));
         btnModificarP2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -384,6 +402,11 @@ public class Pedidos extends javax.swing.JFrame {
         });
         jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 180, 60));
 
+        lblMesa1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblMesa1.setForeground(new java.awt.Color(0, 0, 0));
+        lblMesa1.setText("Mesa : ");
+        jPanel1.add(lblMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 90, 30));
+
         jPanel1_imagen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 680));
 
         getContentPane().add(jPanel1_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
@@ -400,7 +423,14 @@ public class Pedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBuscarActionPerformed
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
-        Venta venta = new Venta();
+        for (int i = 0; i < jTable2.getRowCount(); i++) {
+            int codigoProducto = (int) jTable2.getValueAt(i, 0);
+            int cantidad = (int) jTable2.getValueAt(i, 2);
+            int codMesa = Integer.parseInt(text_Mesa.getText());
+            PedidoTemp.setPedidos(new Pedidos(0, 1, codigoProducto, cantidad, codMesa));
+        }
+
+        vVentas venta = new vVentas();
         venta.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnModificarPActionPerformed
@@ -511,13 +541,13 @@ public class Pedidos extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pedidos().setVisible(true);
+                new vPedidos().setVisible(true);
             }
         });
     }
 
     public void SeleccionMesa(int numMesa) {
-        lblMesa.setText("Mesa : " + numMesa);
+        text_Mesa.setText(numMesa + "");
     }
 
     public void ListarProductos(String productoSelect) {
@@ -568,7 +598,8 @@ public class Pedidos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JLabel lblMesa;
+    private javax.swing.JLabel lblMesa1;
+    private javax.swing.JLabel text_Mesa;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 

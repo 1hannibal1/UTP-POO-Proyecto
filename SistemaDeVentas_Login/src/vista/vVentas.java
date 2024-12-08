@@ -1,14 +1,17 @@
 package vista;
 
-import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
-import javax.swing.table.DefaultTableModel;
+import modelo.PedidoTemp;
+import modelo.Pedidos;
+import modelo.PedidosManager;
 import modelo.ProductoManager;
 import modelo.Productos;
+import modelo.VentaManager;
+import modelo.Ventas;
 
-public class Venta extends javax.swing.JFrame {
+public class vVentas extends javax.swing.JFrame {
 
-    public Venta() {
+    public vVentas() {
         initComponents();
 
         ButtonGroup group = new ButtonGroup();
@@ -16,7 +19,7 @@ public class Venta extends javax.swing.JFrame {
         group.add(rdButtonFactura);
     }
 
-    Venta(String string, String producto_1, double d) {
+    vVentas(String string, String producto_1, double d) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -61,7 +64,6 @@ public class Venta extends javax.swing.JFrame {
         jPanel1_imagen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("VENTA");
         jPanel1_imagen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 300, 40));
@@ -72,7 +74,6 @@ public class Venta extends javax.swing.JFrame {
 
         btnBuscar.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
         btnBuscar.setText("Preparar Pedido");
         btnBuscar.setBorder(null);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +83,6 @@ public class Venta extends javax.swing.JFrame {
         });
         jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 220, 50));
 
-        txtCliente.setBackground(new java.awt.Color(255, 255, 255));
         txtCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         txtCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +91,6 @@ public class Venta extends javax.swing.JFrame {
         });
         jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 380, 30));
 
-        txtTotal.setBackground(new java.awt.Color(255, 255, 255));
         txtTotal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         txtTotal.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +102,6 @@ public class Venta extends javax.swing.JFrame {
 
         btnModificarP.setBackground(new java.awt.Color(204, 204, 204));
         btnModificarP.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnModificarP.setForeground(new java.awt.Color(0, 0, 0));
         btnModificarP.setText("Modificar Pedido");
         btnModificarP.setBorder(null);
         btnModificarP.addActionListener(new java.awt.event.ActionListener() {
@@ -115,47 +113,34 @@ public class Venta extends javax.swing.JFrame {
 
         rdButtonBoleta.setBackground(new java.awt.Color(255, 255, 255));
         rdButtonBoleta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rdButtonBoleta.setForeground(new java.awt.Color(0, 0, 0));
         rdButtonBoleta.setText("BOLETA");
-        rdButtonBoleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdButtonBoletaActionPerformed(evt);
-            }
-        });
         jPanel1.add(rdButtonBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 140, -1));
 
         rdButtonFactura.setBackground(new java.awt.Color(255, 255, 255));
         rdButtonFactura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rdButtonFactura.setForeground(new java.awt.Color(0, 0, 0));
         rdButtonFactura.setText("FACTURA");
         jPanel1.add(rdButtonFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Total:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Cliente:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("DNI / RUC:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Dirección:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Teléfono:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
-        txtDocumento.setBackground(new java.awt.Color(255, 255, 255));
         txtDocumento.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         txtDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +149,6 @@ public class Venta extends javax.swing.JFrame {
         });
         jPanel1.add(txtDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 380, 30));
 
-        txtDireccion.setBackground(new java.awt.Color(255, 255, 255));
         txtDireccion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +157,6 @@ public class Venta extends javax.swing.JFrame {
         });
         jPanel1.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 380, 30));
 
-        txtTlelefono.setBackground(new java.awt.Color(255, 255, 255));
         txtTlelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
         txtTlelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +175,7 @@ public class Venta extends javax.swing.JFrame {
     private void rdButtonBoletaActionPerformed(java.awt.event.ActionEvent evt) {
         // Aquí va el código que deseas ejecutar al hacer clic en el botón
     }
-    
+
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
@@ -202,13 +185,52 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteActionPerformed
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
-        Pedidos pedidos = new Pedidos();
+        vPedidos pedidos = new vPedidos();
         pedidos.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnModificarPActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        int maxPedido = 0;
+        for (Pedidos pedidos : PedidosManager.getPedidos()) {
+            if (maxPedido < pedidos.getCodPedido()) {
+                maxPedido = pedidos.getCodPedido();
+            }
+        }
+        double total = 0.0;
+        for (Pedidos pedidoTemp : PedidoTemp.getPedidos()) {
+            int codigo = PedidosManager.getPedidos().size() + 1;
+            double precioUnitario = 0;
+            for (Productos productos : ProductoManager.getProductos()) {
+                if (productos.getCodigo() == pedidoTemp.getCodProducto()) {
+                    precioUnitario = productos.getPrecio();
+                    break;
+                }
+            }
+            total += precioUnitario * pedidoTemp.getCantidad();
+            PedidosManager.setPedidos(new Pedidos(
+                    codigo, maxPedido + 1, pedidoTemp.getCodProducto(),
+                    pedidoTemp.getCantidad(), pedidoTemp.getCodMesa()));
+        }
 
+        String tipoVenta = "";
+        if (rdButtonBoleta.isSelected()) {
+            tipoVenta = "Boleta";
+        } else if (rdButtonFactura.isSelected()) {
+            tipoVenta = "Factura";
+        } else {
+            System.out.println("No se seleccionó ninguna opción");
+        }
+        String cliente = txtCliente.getText();
+        String documento = txtDocumento.getText();
+        String direccion = txtDireccion.getText();
+        int teledono = Integer.parseInt(txtTlelefono.getText());
+        int codigoVenta = VentaManager.getVentas().size() + 1;
+        VentaManager.setVentas(new Ventas(codigoVenta, maxPedido + 1, tipoVenta, cliente, documento, direccion, teledono, total));
+        PedidoTemp.limpiarLista();
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentoActionPerformed
@@ -223,15 +245,11 @@ public class Venta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTlelefonoActionPerformed
 
-    private void rdButtonBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdButtonBoletaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdButtonBoletaActionPerformed
-
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Venta().setVisible(true);
+                new vVentas().setVisible(true);
             }
         });
     }
