@@ -11,8 +11,8 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1_IngresarVenta = new javax.swing.JButton();
-        jButton2_Productos = new javax.swing.JButton();
+        jButton1_AdminProduct = new javax.swing.JButton();
+        jButton2_InitPedidos = new javax.swing.JButton();
         jButton3_Reportes = new javax.swing.JButton();
         jButton5_Salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -27,23 +27,23 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1_IngresarVenta.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1_IngresarVenta.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1_IngresarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/venta.png"))); // NOI18N
-        jButton1_IngresarVenta.setText("Administrar Productos");
-        jButton1_IngresarVenta.addActionListener(new java.awt.event.ActionListener() {
+        jButton1_AdminProduct.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1_AdminProduct.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1_AdminProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/venta.png"))); // NOI18N
+        jButton1_AdminProduct.setText("Administrar Productos");
+        jButton1_AdminProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_IngresarVentaActionPerformed(evt);
+                jButton1_AdminProductActionPerformed(evt);
             }
         });
 
-        jButton2_Productos.setBackground(new java.awt.Color(204, 204, 255));
-        jButton2_Productos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/producto.png"))); // NOI18N
-        jButton2_Productos.setText("Ingresar Pedidos");
-        jButton2_Productos.addActionListener(new java.awt.event.ActionListener() {
+        jButton2_InitPedidos.setBackground(new java.awt.Color(204, 204, 255));
+        jButton2_InitPedidos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2_InitPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/producto.png"))); // NOI18N
+        jButton2_InitPedidos.setText("Ingresar Pedidos");
+        jButton2_InitPedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2_ProductosActionPerformed(evt);
+                jButton2_InitPedidosActionPerformed(evt);
             }
         });
 
@@ -72,25 +72,26 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(59, 508, Short.MAX_VALUE)
-                .addComponent(jButton5_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1_IngresarVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2_Productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3_Reportes, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(142, 142, 142))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton5_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1_AdminProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2_InitPedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3_Reportes, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(142, 142, 142))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(110, 110, 110)
-                .addComponent(jButton1_IngresarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1_AdminProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2_Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton2_InitPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3_Reportes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
@@ -170,29 +171,25 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1_IngresarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_IngresarVentaActionPerformed
-        Producto producto = new Producto();
-        producto.setVisible(true); 
+    private void jButton1_AdminProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_AdminProductActionPerformed
+        new Producto().setVisible(true); 
         dispose();
-    }//GEN-LAST:event_jButton1_IngresarVentaActionPerformed
+    }//GEN-LAST:event_jButton1_AdminProductActionPerformed
 
     private void jButton5_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5_SalirActionPerformed
-        Login login = new Login();
-        login.setVisible(true); 
+        new Login().setVisible(true); 
         dispose();
     }//GEN-LAST:event_jButton5_SalirActionPerformed
 
     private void jButton3_ReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_ReportesActionPerformed
-        Reportes reportes = new Reportes();
-        reportes.setVisible(true); 
+        new Reportes().setVisible(true); 
         dispose();
     }//GEN-LAST:event_jButton3_ReportesActionPerformed
 
-    private void jButton2_ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_ProductosActionPerformed
-        vPedidos pedidos = new vPedidos();
-        pedidos.setVisible(true); 
+    private void jButton2_InitPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_InitPedidosActionPerformed
+        new vPedidos().setVisible(true); 
         dispose();
-    }//GEN-LAST:event_jButton2_ProductosActionPerformed
+    }//GEN-LAST:event_jButton2_InitPedidosActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -203,8 +200,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1_IngresarVenta;
-    private javax.swing.JButton jButton2_Productos;
+    private javax.swing.JButton jButton1_AdminProduct;
+    private javax.swing.JButton jButton2_InitPedidos;
     private javax.swing.JButton jButton3_Reportes;
     private javax.swing.JButton jButton5_Salir;
     private javax.swing.JPanel jPanel1;

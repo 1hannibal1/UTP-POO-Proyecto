@@ -1,12 +1,24 @@
 package modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity // Indica que esta clase es una entidad JPA
+@Table(name = "productos")
 public class Productos {
 
+    @Id // Indica que este campo es la clave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera automáticamente el ID (compatible con MySQL)
     private int codigo;
+
     private String nombre;
     private double precio;
     private String categoria;
     private String descripcion;
+
 
     public Productos() {
     }

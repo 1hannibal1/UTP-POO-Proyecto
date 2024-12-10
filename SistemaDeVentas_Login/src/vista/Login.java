@@ -3,6 +3,7 @@ package vista;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import modelo.ProductoManager;
 import modelo.Usuario;
 import modelo.UsuarioManager;
 import modelo.Usuarios.Cajero;
@@ -17,6 +18,7 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Login - SISTEMA DE VENTAS");
         this.setSize(new Dimension(400, 500));
+        
 
     }
 
@@ -134,9 +136,12 @@ public class Login extends javax.swing.JFrame {
 
     public static void main(String args[]) {
         UsuarioManager.crearUsuario();
+        ProductoManager.inicializarDatos();
         java.awt.EventQueue.invokeLater(() -> {
             new Login().setVisible(true);
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
