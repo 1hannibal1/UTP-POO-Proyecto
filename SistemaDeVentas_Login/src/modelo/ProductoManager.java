@@ -9,18 +9,25 @@ public class ProductoManager {
     
     public static void inicializarDatos() {
         EntityManager em = JPAUtil.getEntityManager(); // Uso estático, no se instancia JPAUtil
-        em.getTransaction().begin();
+        try {
+            em.getTransaction().begin();
 
-        Productos p1 = new Productos(0, "Bebidas1", 10.0, "Bebidas", "Bebidas1");
-        Productos p2 = new Productos(0, "Bebidas2", 20.0, "Bebidas", "Bebidas2");
-        Productos p3 = new Productos(0, "PolloBrasa1", 30.0, "Piqueos", "PolloBrasa1");
+            Productos p1 = new Productos(0, "Bebidas1", 10.0, "Bebidas", "Bebidas1");
+            Productos p2 = new Productos(1, "Bebidas2", 20.0, "Bebidas", "Bebidas2");
+            Productos p3 = new Productos(2, "PolloBrasa1", 30.0, "Piqueos", "PolloBrasa1");
 
-        em.persist(p1);
-        em.persist(p2);
-        em.persist(p3);
+            em.persist(p1);
+            em.persist(p2);
+            em.persist(p3);
 
-        em.getTransaction().commit();
-        em.close();
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+        } finally {
+            em.close();
+        }
     }
     
     public static void setProductos(Productos producto) {
@@ -29,6 +36,32 @@ public class ProductoManager {
 
     public static CollectionCustom<Productos> getProductos() {
         return productos;
+    }
+    
+    public static boolean updateProducto(Productos newProducto) {
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.merge(newProducto);
+            em.getTransaction().commit();
+            Productos productoSelect = buscarProductoPorCodigo(newProducto.getCodigo());
+            if(productoSelect != null){
+                productoSelect.setNombre(newProducto.getNombre());
+                productoSelect.setCategoria(newProducto.getCategoria());
+                productoSelect.setPrecio(newProducto.getPrecio());
+                productoSelect.setDescripcion(newProducto.getDescripcion());
+            }
+            em.close();
+            return true;
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            System.err.println("Error al actualizar producto: " + e.getMessage());
+            e.printStackTrace();
+            em.close();
+            return false;
+        }
     }
     
     public static Productos buscarProductoPorCodigo(int codigoBuscado) {

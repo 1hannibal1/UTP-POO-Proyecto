@@ -214,12 +214,10 @@ public class Producto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El precio debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Productos productoSelect = ProductoManager.buscarProductoPorCodigo(this.selectedCodeProduct);
-        if(productoSelect != null){
-            productoSelect.setNombre(nombreP);
-            productoSelect.setCategoria(category);
-            productoSelect.setPrecio(precioP);
-            productoSelect.setDescripcion(description);
+        Productos updateProduct = 
+                new Productos(selectedCodeProduct, nombreP, precioP, category, description);
+        boolean validUpdateProduct = ProductoManager.updateProducto(updateProduct);
+        if(validUpdateProduct){
             this.actualizarTabla();
         }
     }//GEN-LAST:event_jButton1_actualizarProductoActionPerformed
