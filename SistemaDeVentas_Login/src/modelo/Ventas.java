@@ -1,14 +1,40 @@
 package modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ventas")
 public class Ventas {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo")
     private int codigo;
+
+    @Column(name = "cod_pedido", nullable = false)
     private int codpedido;
+
+    @Column(name = "tipo", nullable = false, length = 50)
     private String tipo;
+
+    @Column(name = "cliente", nullable = false, length = 100)
     private String cliente;
+
+    @Column(name = "documento", nullable = false, length = 20)
     private String documento;
+
+    @Column(name = "direccion", length = 255)
     private String direccion;
+
+    @Column(name = "telefono")
     private int telefono;
+
+    @Column(name = "total", nullable = false)
     private double total;
 
     public Ventas() {

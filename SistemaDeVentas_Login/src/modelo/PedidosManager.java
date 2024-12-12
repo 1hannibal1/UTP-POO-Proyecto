@@ -1,22 +1,31 @@
 package modelo;
 
-import java.util.ArrayList;
+import interfaces.CollectionCustom;
+import interfaces.JPAUtil;
+import javax.persistence.EntityManager;
 
 public class PedidosManager {
 
-    private static ArrayList<Pedidos> pedidos = new ArrayList<>();
+    private static CollectionCustom<Pedidos> pedidos = new CollectionCustom<>();
+    
+    public static void inicializarDatos() {
+        EntityManager em = JPAUtil.getEntityManager(); // Uso estático, no se instancia JPAUtil
+        em.getTransaction().begin();
 
-    static {
-        pedidos = new ArrayList<>();
-        pedidos.add(new Pedidos(1, 1, 1, 1, 1));
-        pedidos.add(new Pedidos(2, 1, 2, 2, 1));
+        Pedidos p1 = new Pedidos(1, 1, 1, 1, 1);
+        Pedidos p2 = new Pedidos(2, 1, 2, 2, 1);
+
+        em.persist(p1);
+        em.persist(p2);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public static void setPedidos(Pedidos pedido) {
         pedidos.add(pedido);
     }
 
-    public static ArrayList<Pedidos> getPedidos() {
+    public static CollectionCustom<Pedidos> getPedidos() {
         return pedidos;
     }
 }
