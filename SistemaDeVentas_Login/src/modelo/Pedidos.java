@@ -1,11 +1,31 @@
 package modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "pedidos")
 public class Pedidos {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo")
     private int codigo;
+
+    @Column(name = "cod_pedido", nullable = false)
     private int codPedido;
+
+    @Column(name = "cod_producto", nullable = false)
     private int codProducto;
+
+    @Column(name = "cantidad", nullable = false)
     private int cantidad;
+
+    @Column(name = "cod_mesa", nullable = false)
     private int codMesa;
 
     public Pedidos() {

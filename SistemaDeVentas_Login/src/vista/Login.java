@@ -3,12 +3,15 @@ package vista;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import modelo.PedidoTemp;
+import modelo.PedidosManager;
 import modelo.ProductoManager;
 import modelo.Usuario;
 import modelo.UsuarioManager;
 import modelo.Usuarios.Cajero;
 import modelo.Usuarios.Gerente;
 import modelo.Usuarios.Mozo;
+import modelo.VentaManager;
 
 public class Login extends javax.swing.JFrame {
 
@@ -137,6 +140,8 @@ public class Login extends javax.swing.JFrame {
     public static void main(String args[]) {
         UsuarioManager.crearUsuario();
         ProductoManager.inicializarDatos();
+        PedidosManager.inicializarDatos();
+        VentaManager.inicializarDatos();
         java.awt.EventQueue.invokeLater(() -> {
             new Login().setVisible(true);
         });
