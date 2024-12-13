@@ -42,11 +42,9 @@ public class vVentas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
         txtCliente = new javax.swing.JTextField();
-        txtTotal = new javax.swing.JTextField();
         btnModificarP = new javax.swing.JButton();
         rdButtonBoleta = new javax.swing.JRadioButton();
         rdButtonFactura = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -91,15 +89,6 @@ public class vVentas extends javax.swing.JFrame {
         });
         jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 380, 30));
 
-        txtTotal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
-        txtTotal.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTotalActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 380, 30));
-
         btnModificarP.setBackground(new java.awt.Color(204, 204, 204));
         btnModificarP.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnModificarP.setText("Modificar Pedido");
@@ -120,10 +109,6 @@ public class vVentas extends javax.swing.JFrame {
         rdButtonFactura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rdButtonFactura.setText("FACTURA");
         jPanel1.add(rdButtonFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("Total:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Cliente:");
@@ -268,7 +253,6 @@ public class vVentas extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup8;
     private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -282,7 +266,6 @@ public class vVentas extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtDocumento;
     private javax.swing.JTextField txtTlelefono;
-    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 
 }

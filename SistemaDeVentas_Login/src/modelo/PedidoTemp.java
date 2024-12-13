@@ -8,8 +8,6 @@ public class PedidoTemp {
 
     static {
         pedidoTemp = new ArrayList<>();
-        pedidoTemp.add(new Pedidos(1, 1, 1, 1, 1));
-        pedidoTemp.add(new Pedidos(2, 1, 2, 2, 1));
     }
 
     public static void setPedidos(Pedidos pedido) {
