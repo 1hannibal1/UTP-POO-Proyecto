@@ -19,9 +19,9 @@ public class ProductoManager {
             Productos p2 = new Productos(1, "Bebidas2", 20.0, "Bebidas", "Bebidas2");
             Productos p3 = new Productos(2, "PolloBrasa1", 30.0, "Piqueos", "PolloBrasa1");
 
-            em.persist(p1);
-            em.persist(p2);
-            em.persist(p3);
+            em.merge(p1);
+            em.merge(p2);
+            em.merge(p3);
             em.getTransaction().commit();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {

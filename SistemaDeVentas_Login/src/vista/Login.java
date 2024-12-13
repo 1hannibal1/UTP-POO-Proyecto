@@ -140,12 +140,11 @@ public class Login extends javax.swing.JFrame {
     public static void main(String args[]) {
         UsuarioManager.crearUsuario();
         ProductoManager.inicializarDatos();
-        PedidosManager.inicializarDatos();
-        VentaManager.inicializarDatos();
+        //PedidosManager.inicializarDatos();
+        //VentaManager.inicializarDatos();
         java.awt.EventQueue.invokeLater(() -> {
             new Login().setVisible(true);
         });
-        
         
     }
 
@@ -178,13 +177,16 @@ public class Login extends javax.swing.JFrame {
             
             if (usuarioActual instanceof Mozo) {
                 MenuMozo menuMozo = new MenuMozo();
-                menuMozo.setVisible(true); 
+                menuMozo.setVisible(true);
+                dispose();
             }else if (usuarioActual instanceof Cajero){
                 MenuCajero menuCajero = new MenuCajero();
                 menuCajero.setVisible(true);
+                dispose();
             }else if (usuarioActual instanceof Gerente){
                 Menu menu = new Menu();
                 menu.setVisible(true);
+                dispose();
             }else {
                 JOptionPane.showInternalMessageDialog(this,"Usuario desconocido","Error",JOptionPane.ERROR_MESSAGE);
             }
