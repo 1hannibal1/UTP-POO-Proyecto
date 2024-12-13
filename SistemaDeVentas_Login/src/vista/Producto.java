@@ -1,5 +1,7 @@
 package vista;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Productos;
@@ -196,72 +198,73 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_nombreProductoActionPerformed
 
     private void jButton1_actualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_actualizarProductoActionPerformed
-        String nombreP = txt_nombreProducto.getText().trim();
-        String description = txt_descripcionProducto.getText().trim();
-        String category = (String) cbox_categoriaProductos.getSelectedItem();
-        double precioP;
-        if (nombreP.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "El nombre del producto no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (description.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "La descripción no puede estar vacía.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        try {
-            precioP = Double.parseDouble(txt_precioProducto.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "El precio debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        Productos updateProduct = 
-                new Productos(selectedCodeProduct, nombreP, precioP, category, description);
+        Optional<Productos> optionalProducto = validarYConstruirProducto();
+        if (optionalProducto.isEmpty()) return;
+
+        Productos updateProduct = optionalProducto.get();
+        updateProduct.setCodigo(selectedCodeProduct); // Agregamos el código seleccionado al producto
+
         boolean validUpdateProduct = ProductoManager.updateProducto(updateProduct);
-        if(validUpdateProduct){
+        if (validUpdateProduct) {
             this.actualizarTabla();
+            JOptionPane.showMessageDialog(this, "Producto actualizado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1_actualizarProductoActionPerformed
 
     private void jButton2_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_agregarProductoActionPerformed
+        Optional<Productos> optionalProducto = validarYConstruirProducto();
+        if (optionalProducto.isEmpty()) return;
+
+        Productos producto = optionalProducto.get();
+
+        if (existeProductoConNombreYCategoria(producto.getNombre(), producto.getCategoria())) {
+            JOptionPane.showMessageDialog(this, "Ya existe un producto con el mismo nombre y categoría.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        producto.setCodigo(ProductoManager.getProductos().size() + 1); // Asignamos el código automáticamente
+        ProductoManager.setProductos(producto);
+
+        tableModel.addRow(new Object[]{
+            producto.getNombre(), producto.getPrecio(), producto.getCategoria(), producto.getDescripcion()
+        });
+
+        limpiar();
+        JOptionPane.showMessageDialog(this, "Producto agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton2_agregarProductoActionPerformed
+
+    private Optional<Productos> validarYConstruirProducto() {
         String nombreP = txt_nombreProducto.getText().trim();
         String description = txt_descripcionProducto.getText().trim();
         String category = (String) cbox_categoriaProductos.getSelectedItem();
         double precioP;
+
         if (nombreP.isEmpty()) {
             JOptionPane.showMessageDialog(this, "El nombre del producto no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+            return Optional.empty();
         }
         if (description.isEmpty()) {
             JOptionPane.showMessageDialog(this, "La descripción no puede estar vacía.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+            return Optional.empty();
         }
         try {
             precioP = Double.parseDouble(txt_precioProducto.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "El precio debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+            return Optional.empty();
         }
-        
-        boolean exists = ProductoManager.getProductos().stream()
-            .anyMatch(producto -> producto.getNombre().equalsIgnoreCase(nombreP) && 
-                                  producto.getCategoria().equalsIgnoreCase(category));
-        if (exists) {
-            JOptionPane.showMessageDialog(
-                    this, 
-                    "Ya existe un producto con el mismo nombre y categoría.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        Productos producto = new Productos((ProductoManager.getProductos().size() + 1), nombreP, precioP, category, description);
-        ProductoManager.setProductos(producto);
-        tableModel.addRow(new Object[]{
-          producto.getNombre(), producto.getPrecio(), producto.getCategoria(), producto.getDescripcion()
-        });
-        JOptionPane.showMessageDialog(this, "Producto agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_jButton2_agregarProductoActionPerformed
 
+        return Optional.of(new Productos(0, nombreP, precioP, category, description));
+    }
+    
+    private boolean existeProductoConNombreYCategoria(String nombreP, String category) {
+        try {
+            return ProductoManager.buscarProductoPorNombreYCategoria(nombreP, category) != null;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+    
     private void jButton1_regresarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarProductosActionPerformed
         Menu menu = new Menu();
         menu.setVisible(true);
