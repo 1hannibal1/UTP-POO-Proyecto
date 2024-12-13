@@ -2,7 +2,10 @@ package modelo;
 
 import interfaces.CollectionCustom;
 import interfaces.JPAUtil;
+import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 public class ProductoManager {
     private static CollectionCustom<Productos> productos = new CollectionCustom<>();
@@ -19,7 +22,6 @@ public class ProductoManager {
             em.persist(p1);
             em.persist(p2);
             em.persist(p3);
-
             em.getTransaction().commit();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
@@ -31,11 +33,36 @@ public class ProductoManager {
     }
     
     public static void setProductos(Productos producto) {
-        productos.add(producto);
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            productos.add(producto);
+            em.persist(producto);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+        } finally {
+            em.close();
+        }
     }
 
     public static CollectionCustom<Productos> getProductos() {
-        return productos;
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            TypedQuery<Productos> query = em.createQuery("SELECT p FROM Productos p", Productos.class);
+            List<Productos> resultado = query.getResultList();
+            productos.clear();
+            productos.addAll(resultado);
+            return productos;
+        } catch (Exception e) {
+            return productos;
+        } finally {
+            if (em.isOpen()) {
+                em.close();
+            }
+        }
     }
     
     public static boolean updateProducto(Productos newProducto) {

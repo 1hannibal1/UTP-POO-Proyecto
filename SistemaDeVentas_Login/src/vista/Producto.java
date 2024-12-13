@@ -277,7 +277,6 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_cbox_categoriaProductosActionPerformed
 
     public static void main(String args[]) {
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Producto().setVisible(true);
