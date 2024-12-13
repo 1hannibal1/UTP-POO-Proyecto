@@ -6,29 +6,27 @@ import java.util.Scanner;
 
 public class Reporte {
      private int numeroMesa;
-    private ArrayList<Pedido> pedidos;
+    private ArrayList<Pedidos> pedidos;
 
-    public Reporte(int numeroMesa, ArrayList<Pedido> pedidos) {
+    public Reporte(int numeroMesa, ArrayList<Pedidos> pedidos) {
         this.numeroMesa = numeroMesa;
         this.pedidos = pedidos;
     }
 
-    public ArrayList<Pedido> getPedidos() {
+    public ArrayList<Pedidos> getPedidos() {
         return this.pedidos;
     }
 
 
-    public void agregarPedido(Pedido pedido) {
+    public void agregarPedido(Pedidos pedido) {
         pedidos.add(pedido);
     }
     public void mostrarPedidos() {
         if (pedidos.isEmpty()) {
             System.out.println("No hay pedidos disponibles.");
         } else {
-            for (Pedido pedido : pedidos) {
-                System.out.println("Cliente: " + pedido.getNombreCliente() + 
-                                   ", Producto: " + pedido.getProduct() + 
-                                   ", Cantidad: " + pedido.getCantidad());
+            for (Pedidos pedido : pedidos) {
+                
             }
         }
     }
