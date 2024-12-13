@@ -424,8 +424,8 @@ public class vPedidos extends javax.swing.JFrame {
 
     private void btnModificarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarPActionPerformed
         for (int i = 0; i < jTable2.getRowCount(); i++) {
-            int codigoProducto = (int) jTable2.getValueAt(i, 0);
-            int cantidad = (int) jTable2.getValueAt(i, 2);
+            int codigoProducto = Integer.parseInt(jTable2.getValueAt(i, 0).toString());
+            int cantidad = Integer.parseInt(jTable2.getValueAt(i, 2).toString());
             int codMesa = Integer.parseInt(text_Mesa.getText());
             PedidoTemp.setPedidos(new Pedidos(0, 1, codigoProducto, cantidad, codMesa));
         }
