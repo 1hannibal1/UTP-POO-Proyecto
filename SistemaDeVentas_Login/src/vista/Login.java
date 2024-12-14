@@ -140,7 +140,7 @@ public class Login extends javax.swing.JFrame {
     public static void main(String args[]) {
         UsuarioManager.crearUsuario();
         ProductoManager.inicializarDatos();
-        //PedidosManager.inicializarDatos();
+        PedidosManager.inicializarDatos();
         //VentaManager.inicializarDatos();
         java.awt.EventQueue.invokeLater(() -> {
             new Login().setVisible(true);
