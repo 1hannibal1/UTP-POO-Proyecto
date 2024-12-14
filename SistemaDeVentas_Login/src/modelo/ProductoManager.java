@@ -61,10 +61,12 @@ public class ProductoManager {
             .orElse(null);
     }
     
-    public static boolean buscarProductoPorNombreYCategoria(String nombreBuscado, String categoriaBuscada) {
-        return productos.stream()
-            .anyMatch(producto -> producto.getNombre().equalsIgnoreCase(nombreBuscado) &&
-                                  producto.getCategoria().equalsIgnoreCase(categoriaBuscada));
+    public static Productos buscarProductoPorNombreYCategoria(String nombreBuscado, String categoriaBuscada) {
+        return productos.stream().filter(producto -> 
+                producto.getNombre().equals(nombreBuscado) &&
+                producto.getCategoria().equals(categoriaBuscada))
+            .findFirst()
+            .orElse(null);
     }
 
     private static void ejecutarEnTransaccion(EntityAction action) {
