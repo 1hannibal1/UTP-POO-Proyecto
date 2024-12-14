@@ -11,16 +11,7 @@ public class PedidosManager {
     private static CollectionCustom<Pedidos> pedidos = new CollectionCustom<>();
     
     public static void inicializarDatos() {
-        EntityManager em = JPAUtil.getEntityManager(); // Uso estático, no se instancia JPAUtil
-        em.getTransaction().begin();
-
-        Pedidos p1 = new Pedidos(1, 1, 1, 1, 1);
-        Pedidos p2 = new Pedidos(2, 1, 2, 2, 1);
-
-        em.persist(p1);
-        em.persist(p2);
-        em.getTransaction().commit();
-        em.close();
+        getPedidos();
     }
 
     public static void setPedidos(Pedidos pedido) {
@@ -55,4 +46,13 @@ public class PedidosManager {
             }
         }
     }
+    
+    public static CollectionCustom<Pedidos> filtrarPorCodMesa(int codMesa) {
+        CollectionCustom<Pedidos> pedidosFiltrados = new CollectionCustom<>();
+        pedidos.stream()
+                .filter(pedido -> pedido.getCodMesa() == codMesa)
+                .forEach(pedidosFiltrados::add);
+        return pedidosFiltrados;
+    }
+    
 }

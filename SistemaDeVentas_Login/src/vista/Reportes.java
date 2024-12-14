@@ -1,8 +1,12 @@
 package vista;
 
+import interfaces.CollectionCustom;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.Pedidos;
+import modelo.PedidosManager;
+import modelo.ProductoManager;
+import modelo.Productos;
 
 public class Reportes extends javax.swing.JFrame {
 
@@ -190,21 +194,20 @@ public class Reportes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnMesa04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa04ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(4));
     }//GEN-LAST:event_BtnMesa04ActionPerformed
 
 
     private void BtnMesa07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa07ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(7));
     }//GEN-LAST:event_BtnMesa07ActionPerformed
 
     private void BtnMesa02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa02ActionPerformed
-        
-
+        cargarTabla(PedidosManager.filtrarPorCodMesa(2));
     }//GEN-LAST:event_BtnMesa02ActionPerformed
 
     private void BtnMesa01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa01ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(1));
     }//GEN-LAST:event_BtnMesa01ActionPerformed
 
     private void jButton1_regresarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_regresarProductosActionPerformed
@@ -214,28 +217,27 @@ public class Reportes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1_regresarProductosActionPerformed
 
     private void BtnMesa03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa03ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(3));
     }//GEN-LAST:event_BtnMesa03ActionPerformed
 
     private void BtnMesa05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa05ActionPerformed
-        
-
+        cargarTabla(PedidosManager.filtrarPorCodMesa(5));
     }//GEN-LAST:event_BtnMesa05ActionPerformed
 
     private void BtnMesa06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa06ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(6));
     }//GEN-LAST:event_BtnMesa06ActionPerformed
 
     private void BtnMesa08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa08ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(8));
     }//GEN-LAST:event_BtnMesa08ActionPerformed
 
     private void BtnMesa09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa09ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(9));
     }//GEN-LAST:event_BtnMesa09ActionPerformed
 
     private void BtnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMesa10ActionPerformed
-        
+        cargarTabla(PedidosManager.filtrarPorCodMesa(10));
     }//GEN-LAST:event_BtnMesa10ActionPerformed
 
     public static void main(String args[]) {
@@ -270,15 +272,22 @@ public class Reportes extends javax.swing.JFrame {
         });
     }
 
-    private void cargarTabla(ArrayList<Pedidos> listaPedido) {
+    private void cargarTabla(CollectionCustom<Pedidos> listaPedido) {
         tableModel.setRowCount(0);
+        double totalPrice = 0;
         for (Pedidos pedido : listaPedido) {
             System.out.println(pedido);
-            //tableModel.addRow(new Object[]{
-              //  pedido.getCantidad(), pedido.getProduct(), pedido.getNumeroMesa()
-            //});
+            int codProduct = pedido.getCodProducto();
+            Productos producto = ProductoManager.buscarProductoPorCodigo(codProduct);
+            double price = producto.getPrecio() * pedido.getCantidad();
+            totalPrice += price;
+            tableModel.addRow(new Object[]{
+                pedido.getCantidad(), 
+                producto.getNombre(), 
+                price
+            });
         }
-
+        txtTotal.setText("Total: "+totalPrice);
     }
 
 
